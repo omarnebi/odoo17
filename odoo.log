@@ -1,0 +1,1035 @@
+2026-02-10 12:30:42,992 7242 WARNING ? py.warnings: /home/omar/odoo17/odoo/tools/config.py:580: DeprecationWarning: The longpolling-port is a deprecated alias to the gevent-port option, please use the latter.
+  File "/home/omar/odoo17/./odoo-bin", line 8, in <module>
+    odoo.cli.main()
+  File "/home/omar/odoo17/odoo/cli/command.py", line 76, in main
+    o.run(args)
+  File "/home/omar/odoo17/odoo/cli/server.py", line 186, in run
+    main(args)
+  File "/home/omar/odoo17/odoo/cli/server.py", line 133, in main
+    odoo.tools.config.parse_config(args)
+  File "/home/omar/odoo17/odoo/tools/config.py", line 391, in parse_config
+    self._warn_deprecated_options()
+  File "/home/omar/odoo17/odoo/tools/config.py", line 580, in _warn_deprecated_options
+    warnings.warn(
+ 
+2026-02-10 12:30:42,994 7242 INFO ? odoo: Odoo version 17.0 
+2026-02-10 12:30:42,994 7242 INFO ? odoo: Using configuration file at /home/omar/odoo17/odoo.conf 
+2026-02-10 12:30:42,994 7242 INFO ? odoo: addons paths: ['/home/omar/odoo17/odoo/addons', '/home/omar/.local/share/Odoo/addons/17.0', '/home/omar/odoo17/addons', '/home/omar/odoo17/custom_addons'] 
+2026-02-10 12:30:42,994 7242 INFO ? odoo: database: odooevent@default:default 
+2026-02-10 12:30:43,196 7242 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2026-02-10 12:30:43,762 7242 INFO ? odoo.service.server: HTTP service (werkzeug) running on omar-X542UN:8069 
+2026-02-10 12:31:23,448 7242 INFO ? odoo.modules.loading: loading 1 modules... 
+2026-02-10 12:31:23,461 7242 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-02-10 12:31:23,490 7242 WARNING ? odoo.modules.graph: module fetchmail: not installable, skipped 
+2026-02-10 12:31:23,491 7242 WARNING ? odoo.modules.graph: module l10n_generic_coa: not installable, skipped 
+2026-02-10 12:31:23,492 7242 WARNING ? odoo.modules.graph: module account_edi_facturx: not installable, skipped 
+2026-02-10 12:31:23,496 7242 WARNING ? odoo.modules.graph: module payment_transfer: not installable, skipped 
+2026-02-10 12:31:23,506 7242 WARNING ? odoo.modules.graph: module web_kanban_gauge: not installable, skipped 
+2026-02-10 12:31:23,509 7242 INFO ? odoo.modules.graph: module sale: Unmet dependencies: account_payment 
+2026-02-10 12:31:23,509 7242 INFO ? odoo.modules.graph: module sale_sms: Unmet dependencies: sale 
+2026-02-10 12:31:23,509 7242 INFO ? odoo.modules.graph: module sale_management: Unmet dependencies: sale 
+2026-02-10 12:31:23,509 7242 INFO ? odoo.modules.graph: module payment: Unmet dependencies: onboarding 
+2026-02-10 12:31:23,510 7242 INFO ? odoo.modules.graph: module snailmail_account: Unmet dependencies: account 
+2026-02-10 12:31:23,510 7242 INFO ? odoo.modules.graph: module account: Unmet dependencies: onboarding 
+2026-02-10 12:31:23,510 7242 INFO ? odoo.modules.graph: module account_edi: Unmet dependencies: account 
+2026-02-10 12:31:23,510 7242 INFO ? odoo.modules.graph: module account_edi_ubl_cii: Unmet dependencies: account 
+2026-02-10 12:31:23,510 7242 INFO ? odoo.modules.loading: loading 29 modules... 
+2026-02-10 12:31:24,398 7242 INFO ? odoo.modules.loading: 29 modules loaded in 0.89s, 0 queries (+0 extra) 
+2026-02-10 12:31:24,409 7242 ERROR ? odoo.sql_db: bad query: SELECT *, name->>'en_US' AS name FROM ir_model WHERE state = 'manual'
+ERROR: operator does not exist: character varying ->> unknown
+LINE 1: SELECT *, name->>'en_US' AS name FROM ir_model WHERE state =...
+                      ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+ 
+2026-02-10 12:31:24,415 7242 WARNING ? odoo.modules.loading: Transient module states were reset 
+2026-02-10 12:31:24,415 7242 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/omar/odoo17/venv/lib/python3.12/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+        ~~~~~~^^^^^
+KeyError: 'odoo15'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/omar/odoo17/odoo/modules/loading.py", line 507, in load_modules
+    registry.setup_models(cr)
+  File "/home/omar/odoo17/venv/lib/python3.12/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/modules/registry.py", line 302, in setup_models
+    env['ir.model']._add_manual_models()
+  File "/home/omar/odoo17/odoo/addons/base/models/ir_model.py", line 490, in _add_manual_models
+    cr.execute("SELECT *, name->>'en_US' AS name FROM ir_model WHERE state = 'manual'")
+  File "/home/omar/odoo17/odoo/sql_db.py", line 335, in execute
+    res = self._obj.execute(query, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedFunction: operator does not exist: character varying ->> unknown
+LINE 1: SELECT *, name->>'en_US' AS name FROM ir_model WHERE state =...
+                      ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+2026-02-10 12:31:24,423 7242 WARNING ? py.warnings: /home/omar/odoo17/odoo/http.py:1006: DeprecationWarning: request.session.geoip have been moved to request.geoip
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/omar/odoo17/odoo/service/server.py", line 127, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/home/omar/odoo17/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 390, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/omar/odoo17/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+  File "/home/omar/odoo17/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 323, in execute
+    application_iter = app(environ, start_response)
+  File "/home/omar/odoo17/odoo/http.py", line 2409, in __call__
+    response = request._serve_db()
+  File "/home/omar/odoo17/odoo/http.py", line 1973, in _serve_db
+    root.session_store.save(self.session)
+  File "/home/omar/odoo17/odoo/http.py", line 955, in save
+    super().save(session)
+  File "/home/omar/odoo17/odoo/tools/_vendor/sessions.py", line 196, in save
+    pickle.dump(dict(session), f, pickle.HIGHEST_PROTOCOL)
+  File "/home/omar/odoo17/odoo/http.py", line 1006, in __getitem__
+    warnings.warn('request.session.geoip have been moved to request.geoip', DeprecationWarning)
+ 
+2026-02-10 12:31:24,441 7242 WARNING ? py.warnings: /home/omar/odoo17/odoo/http.py:1006: DeprecationWarning: request.session.geoip have been moved to request.geoip
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/omar/odoo17/odoo/service/server.py", line 127, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/home/omar/odoo17/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 390, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/omar/odoo17/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+  File "/home/omar/odoo17/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 323, in execute
+    application_iter = app(environ, start_response)
+  File "/home/omar/odoo17/odoo/http.py", line 2409, in __call__
+    response = request._serve_db()
+  File "/home/omar/odoo17/odoo/http.py", line 1978, in _serve_db
+    return self._serve_nodb()
+  File "/home/omar/odoo17/odoo/http.py", line 1953, in _serve_nodb
+    self.dispatcher.post_dispatch(response)
+  File "/home/omar/odoo17/odoo/http.py", line 2085, in post_dispatch
+    self.request._save_session()
+  File "/home/omar/odoo17/odoo/http.py", line 1900, in _save_session
+    root.session_store.save(sess)
+  File "/home/omar/odoo17/odoo/http.py", line 955, in save
+    super().save(session)
+  File "/home/omar/odoo17/odoo/tools/_vendor/sessions.py", line 196, in save
+    pickle.dump(dict(session), f, pickle.HIGHEST_PROTOCOL)
+  File "/home/omar/odoo17/odoo/http.py", line 1006, in __getitem__
+    warnings.warn('request.session.geoip have been moved to request.geoip', DeprecationWarning)
+ 
+2026-02-10 12:31:24,441 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:24] "GET / HTTP/1.1" 303 - 21 0.098 1.001
+2026-02-10 12:31:24,465 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:24,516 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:24] "GET /web HTTP/1.1" 303 - 2 0.018 0.034
+2026-02-10 12:31:24,523 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,417 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/database/selector HTTP/1.1" 200 - 2 0.003 0.891
+2026-02-10 12:31:25,464 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,466 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,467 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,467 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,469 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,471 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,565 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/src/libs/fontawesome/css/font-awesome.css HTTP/1.1" 200 - 1 0.002 0.100
+2026-02-10 12:31:25,569 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/lib/bootstrap/dist/css/bootstrap.css HTTP/1.1" 200 - 1 0.003 0.102
+2026-02-10 12:31:25,569 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/lib/bootstrap/js/dist/dom/data.js HTTP/1.1" 200 - 1 0.002 0.102
+2026-02-10 12:31:25,572 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/lib/bootstrap/js/dist/dom/manipulator.js HTTP/1.1" 200 - 1 0.002 0.101
+2026-02-10 12:31:25,573 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/lib/bootstrap/js/dist/dom/selector-engine.js HTTP/1.1" 200 - 1 0.004 0.099
+2026-02-10 12:31:25,573 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/lib/bootstrap/js/dist/dom/event-handler.js HTTP/1.1" 200 - 1 0.002 0.104
+2026-02-10 12:31:25,576 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,576 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,577 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,617 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/lib/bootstrap/js/dist/modal.js HTTP/1.1" 200 - 1 0.002 0.039
+2026-02-10 12:31:25,619 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/lib/bootstrap/js/dist/base-component.js HTTP/1.1" 200 - 1 0.002 0.043
+2026-02-10 12:31:25,620 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/service-worker.js HTTP/1.1" 404 - 1 0.002 0.042
+2026-02-10 12:31:25,937 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:25,954 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:25] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - 1 0.002 0.016
+2026-02-10 12:31:26,980 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:31:27,002 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:31:27] "GET /web/service-worker.js HTTP/1.1" 404 - 1 0.002 0.020
+2026-02-10 12:32:40,334 7242 WARNING ? odoo.tools.misc: Failed unpickling data, returning default: {} 
+Traceback (most recent call last):
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1683, in _pickle_load
+    return unpickler.load()
+           ^^^^^^^^^^^^^^^^
+  File "/home/omar/odoo17/odoo/tools/misc.py", line 1679, in find_class
+    raise AttributeError("global '%s.%s' is forbidden" % (module_name, name))
+AttributeError: global 'odoo.http.GeoIP' is forbidden
+2026-02-10 12:32:42,631 7242 INFO None odoo.service.db: Create database `odooevent`. 
+2026-02-10 12:32:44,074 7242 INFO None odoo.modules.loading: loading 1 modules... 
+2026-02-10 12:32:44,074 7242 INFO None odoo.modules.loading: Loading module base (1/1) 
+2026-02-10 12:32:44,101 7242 INFO None odoo.modules.registry: module base: creating or updating database tables 
+2026-02-10 12:32:44,663 7242 INFO None odoo.models: Prepare computation of ir.module.module.menus_by_module 
+2026-02-10 12:32:44,664 7242 INFO None odoo.models: Prepare computation of ir.module.module.reports_by_module 
+2026-02-10 12:32:44,664 7242 INFO None odoo.models: Prepare computation of ir.module.module.views_by_module 
+2026-02-10 12:32:44,849 7242 INFO None odoo.models: Prepare computation of res.partner.user_id 
+2026-02-10 12:32:44,850 7242 INFO None odoo.models: Prepare computation of res.partner.commercial_partner_id 
+2026-02-10 12:32:44,850 7242 INFO None odoo.models: Prepare computation of res.partner.complete_name 
+2026-02-10 12:32:44,850 7242 INFO None odoo.models: Prepare computation of res.partner.company_registry 
+2026-02-10 12:32:44,850 7242 INFO None odoo.models: Prepare computation of res.partner.commercial_company_name 
+2026-02-10 12:32:44,850 7242 INFO None odoo.models: Prepare computation of res.partner.partner_share 
+2026-02-10 12:32:44,911 7242 INFO None odoo.models: Prepare computation of res.currency.decimal_places 
+2026-02-10 12:32:44,951 7242 INFO None odoo.models: Prepare computation of res.company.uses_default_logo 
+2026-02-10 12:32:44,951 7242 INFO None odoo.models: Prepare computation of res.company.logo_web 
+2026-02-10 12:32:44,955 7242 INFO None odoo.models: Computing parent_path for table res_company... 
+2026-02-10 12:32:44,994 7242 INFO None odoo.models: Prepare computation of res.users.signature 
+2026-02-10 12:32:44,994 7242 INFO None odoo.models: Prepare computation of res.users.share 
+2026-02-10 12:32:46,618 7242 INFO None odoo.modules.loading: loading base/data/res_bank.xml 
+2026-02-10 12:32:46,623 7242 INFO None odoo.modules.loading: loading base/data/res.lang.csv 
+2026-02-10 12:32:46,668 7242 INFO None odoo.modules.loading: loading base/data/res_lang_data.xml 
+2026-02-10 12:32:46,703 7242 INFO None odoo.modules.loading: loading base/data/res_partner_data.xml 
+2026-02-10 12:32:46,780 7242 INFO None odoo.modules.loading: loading base/data/res_currency_data.xml 
+2026-02-10 12:32:47,529 7242 INFO None odoo.modules.loading: loading base/data/res_company_data.xml 
+2026-02-10 12:32:47,541 7242 INFO None odoo.modules.loading: loading base/data/res_users_data.xml 
+2026-02-10 12:32:48,643 7242 INFO None odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2026-02-10 12:32:48,652 7242 INFO None odoo.modules.loading: loading base/data/res_country_data.xml 
+2026-02-10 12:32:49,151 7242 INFO None odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2026-02-10 12:32:49,162 7242 INFO None odoo.modules.loading: loading base/security/base_groups.xml 
+2026-02-10 12:32:49,864 7242 INFO None odoo.modules.loading: loading base/security/base_security.xml 
+2026-02-10 12:32:49,996 7242 INFO None odoo.modules.loading: loading base/views/base_menus.xml 
+2026-02-10 12:32:50,066 7242 INFO None odoo.modules.loading: loading base/views/decimal_precision_views.xml 
+2026-02-10 12:32:50,083 7242 INFO None odoo.modules.loading: loading base/views/res_config_views.xml 
+2026-02-10 12:32:50,092 7242 INFO None odoo.modules.loading: loading base/data/res.country.state.csv 
+2026-02-10 12:32:50,733 7242 INFO None odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2026-02-10 12:32:50,857 7242 INFO None odoo.modules.loading: loading base/views/ir_asset_views.xml 
+2026-02-10 12:32:50,875 7242 INFO None odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2026-02-10 12:32:50,893 7242 INFO None odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2026-02-10 12:32:50,923 7242 INFO None odoo.modules.loading: loading base/views/ir_cron_trigger_views.xml 
+2026-02-10 12:32:50,942 7242 INFO None odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2026-02-10 12:32:50,962 7242 INFO None odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2026-02-10 12:32:50,983 7242 INFO None odoo.modules.loading: loading base/views/ir_model_views.xml 
+2026-02-10 12:32:51,124 7242 INFO None odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2026-02-10 12:32:51,147 7242 INFO None odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2026-02-10 12:32:51,175 7242 INFO None odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2026-02-10 12:32:51,196 7242 INFO None odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2026-02-10 12:32:51,216 7242 INFO None odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2026-02-10 12:32:51,264 7242 INFO None odoo.modules.loading: loading base/views/ir_default_views.xml 
+2026-02-10 12:32:51,283 7242 INFO None odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2026-02-10 12:32:51,296 7242 INFO None odoo.modules.loading: loading base/report/ir_model_report.xml 
+2026-02-10 12:32:51,301 7242 INFO None odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2026-02-10 12:32:51,308 7242 INFO None odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2026-02-10 12:32:51,326 7242 INFO None odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2026-02-10 12:32:51,338 7242 INFO None odoo.modules.loading: loading base/views/ir_module_views.xml 
+2026-02-10 12:32:51,389 7242 INFO None odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2026-02-10 12:32:51,468 7242 INFO None odoo.modules.loading: loading base/data/ir_module_module.xml 
+2026-02-10 12:32:51,534 7242 INFO None odoo.modules.loading: loading base/report/ir_module_reports.xml 
+2026-02-10 12:32:51,537 7242 INFO None odoo.modules.loading: loading base/report/ir_module_report_templates.xml 
+2026-02-10 12:32:51,543 7242 INFO None odoo.modules.loading: loading base/wizard/base_module_update_views.xml 
+2026-02-10 12:32:51,556 7242 INFO None odoo.modules.loading: loading base/wizard/base_language_install_views.xml 
+2026-02-10 12:32:51,568 7242 INFO None odoo.modules.loading: loading base/wizard/base_import_language_views.xml 
+2026-02-10 12:32:51,581 7242 INFO None odoo.modules.loading: loading base/wizard/base_module_upgrade_views.xml 
+2026-02-10 12:32:51,599 7242 INFO None odoo.modules.loading: loading base/wizard/base_module_uninstall_views.xml 
+2026-02-10 12:32:51,606 7242 INFO None odoo.modules.loading: loading base/wizard/base_export_language_views.xml 
+2026-02-10 12:32:51,619 7242 INFO None odoo.modules.loading: loading base/wizard/base_partner_merge_views.xml 
+2026-02-10 12:32:51,633 7242 INFO None odoo.modules.loading: loading base/data/ir_demo_failure_data.xml 
+2026-02-10 12:32:51,647 7242 INFO None odoo.modules.loading: loading base/views/ir_profile_views.xml 
+2026-02-10 12:32:51,669 7242 INFO None odoo.modules.loading: loading base/views/res_company_views.xml 
+2026-02-10 12:32:51,691 7242 INFO None odoo.modules.loading: loading base/views/res_lang_views.xml 
+2026-02-10 12:32:51,713 7242 INFO None odoo.modules.loading: loading base/views/res_partner_views.xml 
+2026-02-10 12:32:51,819 7242 INFO None odoo.modules.loading: loading base/views/res_bank_views.xml 
+2026-02-10 12:32:51,850 7242 INFO None odoo.modules.loading: loading base/views/res_country_views.xml 
+2026-02-10 12:32:51,889 7242 INFO None odoo.modules.loading: loading base/views/res_currency_views.xml 
+2026-02-10 12:32:51,924 7242 INFO None odoo.modules.loading: loading base/views/res_users_views.xml 
+2026-02-10 12:32:52,032 7242 INFO None odoo.modules.loading: loading base/views/res_users_identitycheck_views.xml 
+2026-02-10 12:32:52,042 7242 INFO None odoo.modules.loading: loading base/views/ir_property_views.xml 
+2026-02-10 12:32:52,061 7242 INFO None odoo.modules.loading: loading base/views/res_config_settings_views.xml 
+2026-02-10 12:32:52,068 7242 INFO None odoo.modules.loading: loading base/views/report_paperformat_views.xml 
+2026-02-10 12:32:52,095 7242 INFO None odoo.modules.loading: loading base/security/ir.model.access.csv 
+2026-02-10 12:32:52,271 7242 INFO None odoo.modules.loading: Module base loaded in 8.20s, 7944 queries (+7944 other) 
+2026-02-10 12:32:52,271 7242 INFO None odoo.modules.loading: 1 modules loaded in 8.20s, 7944 queries (+7944 extra) 
+2026-02-10 12:32:52,304 7242 INFO None odoo.modules.loading: updating modules list 
+2026-02-10 12:32:52,304 7242 INFO None odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-02-10 12:32:53,093 7242 INFO None odoo.modules.loading: loading 11 modules... 
+2026-02-10 12:32:53,093 7242 INFO None odoo.modules.loading: Loading module web (2/11) 
+2026-02-10 12:32:53,121 7242 INFO None odoo.modules.registry: module web: creating or updating database tables 
+2026-02-10 12:32:53,678 7242 INFO None odoo.modules.loading: loading web/security/ir.model.access.csv 
+2026-02-10 12:32:53,688 7242 INFO None odoo.modules.loading: loading web/views/webclient_templates.xml 
+2026-02-10 12:32:53,736 7242 INFO None odoo.modules.loading: loading web/views/report_templates.xml 
+2026-02-10 12:32:53,808 7242 INFO None odoo.modules.loading: loading web/views/base_document_layout_views.xml 
+2026-02-10 12:32:53,819 7242 INFO None odoo.modules.loading: loading web/views/partner_view.xml 
+2026-02-10 12:32:53,825 7242 INFO None odoo.modules.loading: loading web/views/speedscope_template.xml 
+2026-02-10 12:32:53,830 7242 INFO None odoo.modules.loading: loading web/views/neutralize_views.xml 
+2026-02-10 12:32:53,836 7242 INFO None odoo.modules.loading: loading web/data/ir_attachment.xml 
+2026-02-10 12:32:53,841 7242 INFO None odoo.modules.loading: loading web/data/report_layout.xml 
+2026-02-10 12:32:53,900 7242 INFO None odoo.modules.loading: Module web loaded in 0.81s, 996 queries (+996 other) 
+2026-02-10 12:32:53,900 7242 INFO None odoo.modules.loading: Loading module auth_totp (3/11) 
+2026-02-10 12:32:53,920 7242 INFO None odoo.modules.registry: module auth_totp: creating or updating database tables 
+2026-02-10 12:32:54,016 7242 INFO None odoo.modules.loading: loading auth_totp/security/security.xml 
+2026-02-10 12:32:54,058 7242 INFO None odoo.modules.loading: loading auth_totp/security/ir.model.access.csv 
+2026-02-10 12:32:54,073 7242 INFO None odoo.modules.loading: loading auth_totp/data/ir_action_data.xml 
+2026-02-10 12:32:54,082 7242 INFO None odoo.modules.loading: loading auth_totp/views/res_users_views.xml 
+2026-02-10 12:32:54,108 7242 INFO None odoo.modules.loading: loading auth_totp/views/templates.xml 
+2026-02-10 12:32:54,114 7242 INFO None odoo.modules.loading: loading auth_totp/wizard/auth_totp_wizard_views.xml 
+2026-02-10 12:32:54,144 7242 INFO None odoo.modules.loading: Module auth_totp loaded in 0.24s, 179 queries (+179 other) 
+2026-02-10 12:32:54,145 7242 INFO None odoo.modules.loading: Loading module base_import (4/11) 
+2026-02-10 12:32:54,174 7242 INFO None odoo.modules.registry: module base_import: creating or updating database tables 
+2026-02-10 12:32:54,760 7242 INFO None odoo.modules.loading: loading base_import/security/ir.model.access.csv 
+2026-02-10 12:32:54,793 7242 INFO None odoo.modules.loading: Module base_import loaded in 0.65s, 808 queries (+808 other) 
+2026-02-10 12:32:54,793 7242 INFO None odoo.modules.loading: Loading module base_import_module (5/11) 
+2026-02-10 12:32:54,835 7242 INFO None odoo.modules.registry: module base_import_module: creating or updating database tables 
+2026-02-10 12:32:54,923 7242 INFO None odoo.modules.loading: loading base_import_module/security/ir.model.access.csv 
+2026-02-10 12:32:54,933 7242 INFO None odoo.modules.loading: loading base_import_module/views/base_import_module_view.xml 
+2026-02-10 12:32:54,951 7242 INFO None odoo.modules.loading: loading base_import_module/views/ir_module_views.xml 
+2026-02-10 12:32:54,995 7242 INFO None odoo.modules.loading: Module base_import_module loaded in 0.20s, 154 queries (+154 other) 
+2026-02-10 12:32:54,995 7242 INFO None odoo.modules.loading: Loading module base_setup (6/11) 
+2026-02-10 12:32:55,016 7242 INFO None odoo.modules.registry: module base_setup: creating or updating database tables 
+2026-02-10 12:32:55,071 7242 INFO None odoo.modules.loading: loading base_setup/data/base_setup_data.xml 
+2026-02-10 12:32:55,076 7242 INFO None odoo.modules.loading: loading base_setup/views/res_config_settings_views.xml 
+2026-02-10 12:32:55,107 7242 INFO None odoo.modules.loading: loading base_setup/views/res_partner_views.xml 
+2026-02-10 12:32:55,134 7242 INFO None odoo.modules.loading: Module base_setup loaded in 0.14s, 143 queries (+143 other) 
+2026-02-10 12:32:55,134 7242 INFO None odoo.modules.loading: Loading module bus (7/11) 
+2026-02-10 12:32:55,156 7242 INFO None odoo.modules.registry: module bus: creating or updating database tables 
+2026-02-10 12:32:55,248 7242 INFO None odoo.modules.loading: loading bus/security/ir.model.access.csv 
+2026-02-10 12:32:55,276 7242 INFO None odoo.modules.loading: Module bus loaded in 0.14s, 116 queries (+116 other) 
+2026-02-10 12:32:55,276 7242 INFO None odoo.modules.loading: Loading module web_tour (8/11) 
+2026-02-10 12:32:55,298 7242 INFO None odoo.modules.registry: module web_tour: creating or updating database tables 
+2026-02-10 12:32:55,333 7242 INFO None odoo.modules.loading: loading web_tour/security/ir.model.access.csv 
+2026-02-10 12:32:55,345 7242 INFO None odoo.modules.loading: loading web_tour/security/ir.rule.csv 
+2026-02-10 12:32:55,355 7242 INFO None odoo.modules.loading: loading web_tour/views/tour_views.xml 
+2026-02-10 12:32:55,390 7242 INFO None odoo.modules.loading: Module web_tour loaded in 0.11s, 104 queries (+104 other) 
+2026-02-10 12:32:55,391 7242 INFO None odoo.modules.loading: Loading module iap (9/11) 
+2026-02-10 12:32:55,412 7242 INFO None odoo.modules.registry: module iap: creating or updating database tables 
+2026-02-10 12:32:55,554 7242 INFO None odoo.modules.loading: loading iap/security/ir.model.access.csv 
+2026-02-10 12:32:55,569 7242 INFO None odoo.modules.loading: loading iap/security/ir_rule.xml 
+2026-02-10 12:32:55,579 7242 INFO None odoo.modules.loading: loading iap/views/iap_views.xml 
+2026-02-10 12:32:55,605 7242 INFO None odoo.modules.loading: loading iap/views/res_config_settings.xml 
+2026-02-10 12:32:55,635 7242 INFO None odoo.modules.loading: Module iap loaded in 0.24s, 151 queries (+151 other) 
+2026-02-10 12:32:55,635 7242 INFO None odoo.modules.loading: Loading module web_editor (10/11) 
+2026-02-10 12:32:55,672 7242 INFO None odoo.modules.registry: module web_editor: creating or updating database tables 
+2026-02-10 12:32:56,314 7242 INFO None odoo.modules.loading: loading web_editor/security/ir.model.access.csv 
+2026-02-10 12:32:56,324 7242 INFO None odoo.modules.loading: loading web_editor/data/editor_assets.xml 
+2026-02-10 12:32:56,329 7242 INFO None odoo.modules.loading: loading web_editor/views/editor.xml 
+2026-02-10 12:32:56,343 7242 INFO None odoo.modules.loading: loading web_editor/views/snippets.xml 
+2026-02-10 12:32:56,389 7242 INFO None odoo.modules.loading: Module web_editor loaded in 0.75s, 918 queries (+918 other) 
+2026-02-10 12:32:56,389 7242 INFO None odoo.modules.loading: Loading module web_unsplash (11/11) 
+2026-02-10 12:32:56,412 7242 INFO None odoo.modules.registry: module web_unsplash: creating or updating database tables 
+2026-02-10 12:32:56,460 7242 INFO None odoo.modules.loading: loading web_unsplash/views/res_config_settings_view.xml 
+2026-02-10 12:32:56,496 7242 INFO None odoo.modules.loading: Module web_unsplash loaded in 0.11s, 95 queries (+95 other) 
+2026-02-10 12:32:56,496 7242 INFO None odoo.modules.loading: 11 modules loaded in 3.40s, 3664 queries (+3664 extra) 
+2026-02-10 12:32:56,755 7242 INFO None odoo.modules.loading: Modules loaded. 
+2026-02-10 12:32:56,763 7242 INFO None odoo.modules.registry: Registry loaded in 12.699s 
+2026-02-10 12:32:57,966 7242 INFO None odoo.addons.base.models.res_users: Login successful for db:odooevent login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-10 12:32:57,973 7242 INFO None werkzeug: 127.0.0.1 - - [10/Feb/2026 12:32:57] "POST /web/database/create HTTP/1.1" 303 - 17694 8.573 9.067
+2026-02-10 12:32:57,979 7242 INFO odooevent odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-02-10 12:32:57,997 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:32:57] "GET /web HTTP/1.1" 303 - 10 0.003 0.016
+2026-02-10 12:32:58,133 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:32:58] "GET /web/login HTTP/1.1" 200 - 54 0.016 0.115
+2026-02-10 12:32:58,225 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/2051fb7/web.assets_frontend_minimal.min.js (id:14) 
+2026-02-10 12:32:58,228 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:32:58] "GET /web/assets/2051fb7/web.assets_frontend_minimal.min.js HTTP/1.1" 200 - 15 0.012 0.035
+2026-02-10 12:32:59,248 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:32:59] "GET /web/service-worker.js HTTP/1.1" 200 - 5 0.023 0.041
+2026-02-10 12:32:59,265 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/173ebbd/web.assets_frontend.min.css (id:15) 
+2026-02-10 12:32:59,269 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:32:59] "GET /web/assets/173ebbd/web.assets_frontend.min.css HTTP/1.1" 200 - 12 0.020 1.069
+2026-02-10 12:32:59,286 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:32:59] "GET /web/offline HTTP/1.1" 200 - 13 0.006 0.018
+2026-02-10 12:33:00,112 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/a93ffc6/web.assets_frontend_lazy.min.js (id:16) 
+2026-02-10 12:33:00,120 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:00] "GET /web/assets/a93ffc6/web.assets_frontend_lazy.min.js HTTP/1.1" 200 - 12 0.004 0.767
+2026-02-10 12:33:00,275 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:00] "GET /web/webclient/translations/1770726780263 HTTP/1.1" 200 - 7 0.003 0.006
+2026-02-10 12:33:00,369 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:00] "GET /web/service-worker.js HTTP/1.1" 200 - 5 0.003 0.008
+2026-02-10 12:33:10,304 7242 INFO odooevent odoo.addons.base.models.res_users: Login failed for db:odooevent login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-10 12:33:10,307 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:10] "POST /web/login HTTP/1.1" 200 - 9 0.005 0.642
+2026-02-10 12:33:10,521 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:10] "GET /web/webclient/translations/1770726790511 HTTP/1.1" 200 - 6 0.002 0.005
+2026-02-10 12:33:11,385 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:11] "GET /web/service-worker.js HTTP/1.1" 200 - 5 0.005 0.015
+2026-02-10 12:33:23,222 7242 INFO odooevent odoo.addons.base.models.res_users: Login successful for db:odooevent login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-10 12:33:23,229 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:23] "POST /web/login HTTP/1.1" 303 - 30 0.013 0.665
+2026-02-10 12:33:23,337 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:23] "GET /web HTTP/1.1" 200 - 59 0.018 0.086
+2026-02-10 12:33:24,876 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:24] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.006 0.053
+2026-02-10 12:33:24,946 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/2a98476/web.assets_web.min.css (id:17) 
+2026-02-10 12:33:24,971 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:24] "GET /web/assets/2a98476/web.assets_web.min.css HTTP/1.1" 200 - 12 0.030 1.561
+2026-02-10 12:33:26,305 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/ee5c909/web.assets_web.min.js (id:18) 
+2026-02-10 12:33:26,327 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "GET /web/assets/ee5c909/web.assets_web.min.js HTTP/1.1" 200 - 11 0.006 2.940
+2026-02-10 12:33:26,338 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "GET /web/webclient/load_menus/172bef6a7af96680ac3a6d836ca7e789cae2e213afe9556bbb3468597f3484c3 HTTP/1.1" 200 - 1 0.000 0.004
+2026-02-10 12:33:26,342 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "GET /web/webclient/translations/c097a4426362f8e75854b784c5418b565eb85939?lang=en_US HTTP/1.1" 200 - 3 0.002 0.006
+2026-02-10 12:33:26,610 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "GET /web/static/img/odoo-icon-ios.png HTTP/1.1" 200 - 0 0.000 0.001
+2026-02-10 12:33:26,684 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "GET /web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2 HTTP/1.1" 200 - 0 0.000 0.014
+2026-02-10 12:33:26,688 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 8 0.010 0.012
+2026-02-10 12:33:26,694 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "POST /web/action/load HTTP/1.1" 200 - 9 0.016 0.011
+2026-02-10 12:33:26,710 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/9a02c1b/bus.websocket_worker_assets.min.js (id:19) 
+2026-02-10 12:33:26,712 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "GET /bus/websocket_worker_bundle?v=17.0-3 HTTP/1.1" 200 - 8 0.004 0.026
+2026-02-10 12:33:26,742 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "GET /websocket?version=17.0-3 HTTP/1.1" 101 - 1 0.001 0.005
+2026-02-10 12:33:26,782 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "POST /web/dataset/call_kw/ir.module.module/get_views HTTP/1.1" 200 - 48 0.019 0.040
+2026-02-10 12:33:26,797 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 1 0.000 0.003
+2026-02-10 12:33:26,829 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 39 0.019 0.016
+2026-02-10 12:33:26,841 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:26] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 4 0.004 0.038
+2026-02-10 12:33:27,083 7242 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2026-02-10 12:33:27,125 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:27] "GET /pos_restaurant/static/description/icon.png HTTP/1.1" 200 - 0 0.000 0.002
+2026-02-10 12:33:27,135 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:27] "GET /base/static/img/icons/knowledge.png HTTP/1.1" 200 - 0 0.000 0.001
+2026-02-10 12:33:27,147 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:27] "GET /data_recycle/static/description/icon.png HTTP/1.1" 200 - 0 0.000 0.001
+2026-02-10 12:33:27,154 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:27] "GET /base/static/img/icons/social.png HTTP/1.1" 200 - 0 0.000 0.001
+2026-02-10 12:33:27,162 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:27] "GET /project_todo/static/description/icon.png HTTP/1.1" 200 - 0 0.000 0.002
+2026-02-10 12:33:27,165 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:27] "GET /base/static/img/icons/sale_amazon.png HTTP/1.1" 200 - 0 0.000 0.002
+2026-02-10 12:33:27,629 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:27] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.006
+2026-02-10 12:33:43,978 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Base: Auto-vacuum internal data`. 
+2026-02-10 12:33:44,023 7242 INFO odooevent odoo.addons.base.models.ir_attachment: filestore gc 16 checked, 0 removed 
+2026-02-10 12:33:44,080 7242 INFO odooevent odoo.addons.base.models.res_users: GC'd 1 user log entries 
+2026-02-10 12:33:44,102 7242 INFO odooevent odoo.addons.auth_totp.models.auth_totp: GC'd 0 totp devices entries 
+2026-02-10 12:33:44,114 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Base: Auto-vacuum internal data` (0.136s). 
+2026-02-10 12:33:44,121 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Base: Portal Users Deletion`. 
+2026-02-10 12:33:44,124 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Base: Portal Users Deletion` (0.003s). 
+2026-02-10 12:33:58,281 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:33:58] "POST /web/session/account HTTP/1.1" 200 - 2 0.001 0.004
+2026-02-10 12:34:10,679 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:10] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 36 0.018 0.026
+2026-02-10 12:34:10,692 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:10] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 3 0.002 0.005
+2026-02-10 12:34:15,793 7242 INFO odooevent odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_install on ['Events'] to user omar.nebi147@gmail.com #2 via 127.0.0.1 
+2026-02-10 12:34:15,793 7242 INFO odooevent odoo.addons.base.models.ir_module: User #2 triggered module installation 
+2026-02-10 12:34:15,794 7242 INFO odooevent odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Events'] to user omar.nebi147@gmail.com #2 via 127.0.0.1 
+2026-02-10 12:34:15,921 7242 INFO odooevent odoo.modules.loading: loading 1 modules... 
+2026-02-10 12:34:15,929 7242 INFO odooevent odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-02-10 12:34:15,953 7242 INFO odooevent odoo.modules.loading: updating modules list 
+2026-02-10 12:34:15,954 7242 INFO odooevent odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 127.0.0.1 
+2026-02-10 12:34:16,604 7242 INFO odooevent odoo.modules.loading: loading 11 modules... 
+2026-02-10 12:34:16,613 7242 INFO odooevent odoo.modules.loading: 11 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-02-10 12:34:16,617 7242 INFO odooevent odoo.modules.loading: loading 39 modules... 
+2026-02-10 12:34:16,617 7242 INFO odooevent odoo.modules.loading: Loading module social_media (2/39) 
+2026-02-10 12:34:16,653 7242 INFO odooevent odoo.modules.registry: module social_media: creating or updating database tables 
+2026-02-10 12:34:16,693 7242 INFO odooevent odoo.modules.loading: loading social_media/views/res_company_views.xml 
+2026-02-10 12:34:16,722 7242 INFO odooevent odoo.modules.loading: Module social_media loaded in 0.11s, 61 queries (+61 other) 
+2026-02-10 12:34:16,723 7242 INFO odooevent odoo.modules.loading: Loading module barcodes (5/39) 
+2026-02-10 12:34:16,753 7242 INFO odooevent odoo.modules.registry: module barcodes: creating or updating database tables 
+2026-02-10 12:34:16,836 7242 INFO odooevent odoo.modules.loading: loading barcodes/data/barcodes_data.xml 
+2026-02-10 12:34:16,844 7242 INFO odooevent odoo.modules.loading: loading barcodes/views/barcodes_view.xml 
+2026-02-10 12:34:16,864 7242 INFO odooevent odoo.modules.loading: loading barcodes/security/ir.model.access.csv 
+2026-02-10 12:34:16,896 7242 INFO odooevent odoo.modules.loading: Module barcodes loaded in 0.17s, 134 queries (+134 other) 
+2026-02-10 12:34:16,896 7242 INFO odooevent odoo.modules.loading: Loading module http_routing (10/39) 
+2026-02-10 12:34:16,919 7242 INFO odooevent odoo.modules.registry: module http_routing: creating or updating database tables 
+2026-02-10 12:34:16,930 7242 INFO odooevent odoo.modules.loading: loading http_routing/views/http_routing_template.xml 
+2026-02-10 12:34:16,964 7242 INFO odooevent odoo.modules.loading: loading http_routing/views/res_lang_views.xml 
+2026-02-10 12:34:16,988 7242 INFO odooevent odoo.modules.loading: Module http_routing loaded in 0.09s, 71 queries (+71 other) 
+2026-02-10 12:34:16,988 7242 INFO odooevent odoo.modules.loading: Loading module resource (11/39) 
+2026-02-10 12:34:17,013 7242 INFO odooevent odoo.modules.registry: module resource: creating or updating database tables 
+2026-02-10 12:34:17,186 7242 INFO odooevent odoo.modules.loading: loading resource/data/resource_data.xml 
+2026-02-10 12:34:17,209 7242 INFO odooevent odoo.modules.loading: loading resource/security/ir.model.access.csv 
+2026-02-10 12:34:17,223 7242 INFO odooevent odoo.modules.loading: loading resource/security/resource_security.xml 
+2026-02-10 12:34:17,253 7242 INFO odooevent odoo.modules.loading: loading resource/views/resource_resource_views.xml 
+2026-02-10 12:34:17,277 7242 INFO odooevent odoo.modules.loading: loading resource/views/resource_calendar_leaves_views.xml 
+2026-02-10 12:34:17,306 7242 INFO odooevent odoo.modules.loading: loading resource/views/resource_calendar_attendance_views.xml 
+2026-02-10 12:34:17,316 7242 INFO odooevent odoo.modules.loading: loading resource/views/resource_calendar_views.xml 
+2026-02-10 12:34:17,335 7242 INFO odooevent odoo.modules.loading: loading resource/views/menuitems.xml 
+2026-02-10 12:34:17,372 7242 INFO odooevent odoo.modules.loading: Module resource loaded in 0.38s, 405 queries (+405 other) 
+2026-02-10 12:34:17,372 7242 INFO odooevent odoo.modules.loading: Loading module utm (12/39) 
+2026-02-10 12:34:17,398 7242 INFO odooevent odoo.modules.registry: module utm: creating or updating database tables 
+2026-02-10 12:34:17,551 7242 INFO odooevent odoo.modules.loading: loading utm/data/utm_medium_data.xml 
+2026-02-10 12:34:17,576 7242 INFO odooevent odoo.modules.loading: loading utm/data/utm_source_data.xml 
+2026-02-10 12:34:17,598 7242 INFO odooevent odoo.modules.loading: loading utm/data/utm_stage_data.xml 
+2026-02-10 12:34:17,602 7242 INFO odooevent odoo.modules.loading: loading utm/data/utm_tag_data.xml 
+2026-02-10 12:34:17,606 7242 INFO odooevent odoo.modules.loading: loading utm/views/utm_campaign_views.xml 
+2026-02-10 12:34:17,634 7242 INFO odooevent odoo.modules.loading: loading utm/views/utm_medium_views.xml 
+2026-02-10 12:34:17,650 7242 INFO odooevent odoo.modules.loading: loading utm/views/utm_source_views.xml 
+2026-02-10 12:34:17,662 7242 INFO odooevent odoo.modules.loading: loading utm/views/utm_stage_views.xml 
+2026-02-10 12:34:17,677 7242 INFO odooevent odoo.modules.loading: loading utm/views/utm_tag_views.xml 
+2026-02-10 12:34:17,686 7242 INFO odooevent odoo.modules.loading: loading utm/views/utm_menus.xml 
+2026-02-10 12:34:17,716 7242 INFO odooevent odoo.modules.loading: loading utm/security/ir.model.access.csv 
+2026-02-10 12:34:17,752 7242 INFO odooevent odoo.modules.loading: Module utm loaded in 0.38s, 402 queries (+402 other) 
+2026-02-10 12:34:17,752 7242 INFO odooevent odoo.modules.loading: Loading module google_recaptcha (14/39) 
+2026-02-10 12:34:17,780 7242 INFO odooevent odoo.modules.registry: module google_recaptcha: creating or updating database tables 
+2026-02-10 12:34:17,876 7242 INFO odooevent odoo.modules.loading: loading google_recaptcha/views/res_config_settings_view.xml 
+2026-02-10 12:34:17,917 7242 INFO odooevent odoo.modules.loading: Module google_recaptcha loaded in 0.17s, 64 queries (+64 other) 
+2026-02-10 12:34:17,917 7242 INFO odooevent odoo.modules.loading: Loading module mail (16/39) 
+2026-02-10 12:34:17,981 7242 INFO odooevent odoo.modules.registry: module mail: creating or updating database tables 
+2026-02-10 12:34:18,358 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.partner_ids 
+2026-02-10 12:34:18,358 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.template_id 
+2026-02-10 12:34:18,358 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.activity_type_id 
+2026-02-10 12:34:18,358 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.activity_date_deadline_range 
+2026-02-10 12:34:18,358 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.activity_user_id 
+2026-02-10 12:34:18,358 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.mail_post_method 
+2026-02-10 12:34:18,359 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.activity_summary 
+2026-02-10 12:34:18,359 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.activity_date_deadline_range_type 
+2026-02-10 12:34:18,359 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.activity_user_type 
+2026-02-10 12:34:18,359 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.activity_user_field_name 
+2026-02-10 12:34:18,359 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.activity_note 
+2026-02-10 12:34:18,359 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.mail_post_autofollow 
+2026-02-10 12:34:18,401 7242 INFO odooevent odoo.models: Prepare computation of res.company.email_primary_color 
+2026-02-10 12:34:18,401 7242 INFO odooevent odoo.models: Prepare computation of res.company.email_secondary_color 
+2026-02-10 12:34:18,418 7242 INFO odooevent odoo.models: Prepare computation of res.users.notification_type 
+2026-02-10 12:34:18,543 7242 INFO odooevent odoo.models: Prepare computation of res.partner.email_normalized 
+2026-02-10 12:34:20,200 7242 INFO odooevent odoo.modules.loading: loading mail/data/mail_groups.xml 
+2026-02-10 12:34:20,342 7242 INFO odooevent odoo.modules.loading: loading mail/wizard/mail_activity_schedule_views.xml 
+2026-02-10 12:34:20,350 7242 INFO odooevent odoo.modules.loading: loading mail/wizard/mail_blacklist_remove_views.xml 
+2026-02-10 12:34:20,355 7242 INFO odooevent odoo.modules.loading: loading mail/wizard/mail_compose_message_views.xml 
+2026-02-10 12:34:20,372 7242 INFO odooevent odoo.modules.loading: loading mail/wizard/mail_resend_message_views.xml 
+2026-02-10 12:34:20,382 7242 INFO odooevent odoo.modules.loading: loading mail/wizard/mail_resend_partner_views.xml 
+2026-02-10 12:34:20,390 7242 INFO odooevent odoo.modules.loading: loading mail/wizard/mail_template_preview_views.xml 
+2026-02-10 12:34:20,400 7242 INFO odooevent odoo.modules.loading: loading mail/wizard/mail_wizard_invite_views.xml 
+2026-02-10 12:34:20,405 7242 INFO odooevent odoo.modules.loading: loading mail/wizard/mail_template_reset_views.xml 
+2026-02-10 12:34:20,414 7242 INFO odooevent odoo.modules.loading: loading mail/views/fetchmail_views.xml 
+2026-02-10 12:34:20,432 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_message_subtype_views.xml 
+2026-02-10 12:34:20,444 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_tracking_value_views.xml 
+2026-02-10 12:34:20,455 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_notification_views.xml 
+2026-02-10 12:34:20,467 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_message_views.xml 
+2026-02-10 12:34:20,495 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_message_schedule_views.xml 
+2026-02-10 12:34:20,510 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_mail_views.xml 
+2026-02-10 12:34:20,535 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_followers_views.xml 
+2026-02-10 12:34:20,547 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_ice_server_views.xml 
+2026-02-10 12:34:20,558 7242 INFO odooevent odoo.modules.loading: loading mail/views/discuss_channel_member_views.xml 
+2026-02-10 12:34:20,570 7242 INFO odooevent odoo.modules.loading: loading mail/views/discuss_channel_rtc_session_views.xml 
+2026-02-10 12:34:20,585 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_link_preview_views.xml 
+2026-02-10 12:34:20,597 7242 INFO odooevent odoo.modules.loading: loading mail/views/discuss/discuss_gif_favorite_views.xml 
+2026-02-10 12:34:20,607 7242 INFO odooevent odoo.modules.loading: loading mail/views/discuss_channel_views.xml 
+2026-02-10 12:34:20,633 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_shortcode_views.xml 
+2026-02-10 12:34:20,650 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_activity_views.xml 
+2026-02-10 12:34:20,738 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_activity_plan_views.xml 
+2026-02-10 12:34:20,766 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_activity_plan_template_views.xml 
+2026-02-10 12:34:20,775 7242 INFO odooevent odoo.modules.loading: loading mail/views/res_config_settings_views.xml 
+2026-02-10 12:34:20,802 7242 INFO odooevent odoo.modules.loading: loading mail/data/ir_config_parameter_data.xml 
+2026-02-10 12:34:20,806 7242 INFO odooevent odoo.modules.loading: loading mail/data/res_partner_data.xml 
+2026-02-10 12:34:20,888 7242 INFO odooevent odoo.modules.loading: loading mail/data/mail_message_subtype_data.xml 
+2026-02-10 12:34:20,899 7242 INFO odooevent odoo.modules.loading: loading mail/data/mail_templates_chatter.xml 
+2026-02-10 12:34:20,916 7242 INFO odooevent odoo.modules.loading: loading mail/data/mail_templates_email_layouts.xml 
+2026-02-10 12:34:20,936 7242 INFO odooevent odoo.modules.loading: loading mail/data/mail_templates_mailgateway.xml 
+2026-02-10 12:34:20,947 7242 INFO odooevent odoo.modules.loading: loading mail/data/discuss_channel_data.xml 
+2026-02-10 12:34:20,981 7242 INFO odooevent odoo.modules.loading: loading mail/data/mail_activity_data.xml 
+2026-02-10 12:34:21,000 7242 INFO odooevent odoo.modules.loading: loading mail/data/security_notifications_templates.xml 
+2026-02-10 12:34:21,005 7242 INFO odooevent odoo.modules.loading: loading mail/data/ir_cron_data.xml 
+2026-02-10 12:34:21,049 7242 INFO odooevent odoo.modules.loading: loading mail/security/mail_security.xml 
+2026-02-10 12:34:21,192 7242 INFO odooevent odoo.modules.loading: loading mail/security/ir.model.access.csv 
+2026-02-10 12:34:21,257 7242 INFO odooevent odoo.modules.loading: loading mail/views/discuss_public_templates.xml 
+2026-02-10 12:34:21,262 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_alias_domain_views.xml 
+2026-02-10 12:34:21,276 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_alias_views.xml 
+2026-02-10 12:34:21,292 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_gateway_allowed_views.xml 
+2026-02-10 12:34:21,303 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_guest_views.xml 
+2026-02-10 12:34:21,314 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_message_reaction_views.xml 
+2026-02-10 12:34:21,324 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_templates_public.xml 
+2026-02-10 12:34:21,332 7242 INFO odooevent odoo.modules.loading: loading mail/views/res_users_views.xml 
+2026-02-10 12:34:21,347 7242 INFO odooevent odoo.modules.loading: loading mail/views/res_users_settings_views.xml 
+2026-02-10 12:34:21,357 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_template_views.xml 
+2026-02-10 12:34:21,379 7242 INFO odooevent odoo.modules.loading: loading mail/views/ir_actions_server_views.xml 
+2026-02-10 12:34:21,389 7242 INFO odooevent odoo.modules.loading: loading mail/views/ir_model_views.xml 
+2026-02-10 12:34:21,408 7242 INFO odooevent odoo.modules.loading: loading mail/views/res_partner_views.xml 
+2026-02-10 12:34:21,455 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_blacklist_views.xml 
+2026-02-10 12:34:21,471 7242 INFO odooevent odoo.modules.loading: loading mail/views/mail_menus.xml 
+2026-02-10 12:34:21,617 7242 INFO odooevent odoo.modules.loading: loading mail/views/res_company_views.xml 
+2026-02-10 12:34:21,676 7242 INFO odooevent odoo.modules.loading: Module mail loaded in 3.76s, 4174 queries (+4175 other) 
+2026-02-10 12:34:21,676 7242 INFO odooevent odoo.modules.loading: Loading module auth_signup (18/39) 
+2026-02-10 12:34:21,718 7242 INFO odooevent odoo.modules.registry: module auth_signup: creating or updating database tables 
+2026-02-10 12:34:21,795 7242 INFO odooevent odoo.modules.loading: loading auth_signup/data/ir_config_parameter_data.xml 
+2026-02-10 12:34:21,803 7242 INFO odooevent odoo.modules.loading: loading auth_signup/data/ir_cron_data.xml 
+2026-02-10 12:34:21,815 7242 INFO odooevent odoo.modules.loading: loading auth_signup/data/mail_template_data.xml 
+2026-02-10 12:34:21,828 7242 INFO odooevent odoo.modules.loading: loading auth_signup/views/res_config_settings_views.xml 
+2026-02-10 12:34:21,842 7242 INFO odooevent odoo.modules.loading: loading auth_signup/views/res_users_views.xml 
+2026-02-10 12:34:21,865 7242 INFO odooevent odoo.modules.loading: loading auth_signup/views/auth_signup_login_templates.xml 
+2026-02-10 12:34:21,884 7242 INFO odooevent odoo.modules.loading: loading auth_signup/views/auth_signup_templates_email.xml 
+2026-02-10 12:34:21,895 7242 INFO odooevent odoo.modules.loading: loading auth_signup/views/webclient_templates.xml 
+2026-02-10 12:34:21,920 7242 INFO odooevent odoo.modules.loading: Module auth_signup loaded in 0.24s, 202 queries (+202 other) 
+2026-02-10 12:34:21,920 7242 INFO odooevent odoo.modules.loading: Loading module auth_totp_mail (19/39) 
+2026-02-10 12:34:21,960 7242 INFO odooevent odoo.modules.registry: module auth_totp_mail: creating or updating database tables 
+2026-02-10 12:34:21,993 7242 INFO odooevent odoo.modules.loading: loading auth_totp_mail/data/ir_action_data.xml 
+2026-02-10 12:34:22,012 7242 INFO odooevent odoo.modules.loading: loading auth_totp_mail/data/mail_template_data.xml 
+2026-02-10 12:34:22,018 7242 INFO odooevent odoo.modules.loading: loading auth_totp_mail/data/security_notifications_template.xml 
+2026-02-10 12:34:22,028 7242 INFO odooevent odoo.modules.loading: loading auth_totp_mail/views/res_users_views.xml 
+2026-02-10 12:34:22,078 7242 INFO odooevent odoo.modules.loading: Module auth_totp_mail loaded in 0.16s, 112 queries (+112 other) 
+2026-02-10 12:34:22,078 7242 INFO odooevent odoo.modules.loading: Loading module base_install_request (20/39) 
+2026-02-10 12:34:22,125 7242 INFO odooevent odoo.modules.registry: module base_install_request: creating or updating database tables 
+2026-02-10 12:34:22,211 7242 INFO odooevent odoo.modules.loading: loading base_install_request/security/ir.model.access.csv 
+2026-02-10 12:34:22,223 7242 INFO odooevent odoo.modules.loading: loading base_install_request/wizard/base_module_install_request_views.xml 
+2026-02-10 12:34:22,238 7242 INFO odooevent odoo.modules.loading: loading base_install_request/data/mail_template_data.xml 
+2026-02-10 12:34:22,245 7242 INFO odooevent odoo.modules.loading: loading base_install_request/data/mail_templates_module_install.xml 
+2026-02-10 12:34:22,250 7242 INFO odooevent odoo.modules.loading: loading base_install_request/views/ir_module_module_views.xml 
+2026-02-10 12:34:22,283 7242 INFO odooevent odoo.modules.loading: Module base_install_request loaded in 0.20s, 139 queries (+139 other) 
+2026-02-10 12:34:22,283 7242 INFO odooevent odoo.modules.loading: Loading module google_gmail (21/39) 
+2026-02-10 12:34:22,334 7242 INFO odooevent odoo.modules.registry: module google_gmail: creating or updating database tables 
+2026-02-10 12:34:22,388 7242 INFO odooevent odoo.modules.loading: loading google_gmail/views/fetchmail_server_views.xml 
+2026-02-10 12:34:22,401 7242 INFO odooevent odoo.modules.loading: loading google_gmail/views/ir_mail_server_views.xml 
+2026-02-10 12:34:22,412 7242 INFO odooevent odoo.modules.loading: loading google_gmail/views/res_config_settings_views.xml 
+2026-02-10 12:34:22,452 7242 INFO odooevent odoo.modules.loading: Module google_gmail loaded in 0.17s, 118 queries (+118 other) 
+2026-02-10 12:34:22,452 7242 INFO odooevent odoo.modules.loading: Loading module iap_mail (22/39) 
+2026-02-10 12:34:22,494 7242 INFO odooevent odoo.modules.registry: module iap_mail: creating or updating database tables 
+2026-02-10 12:34:22,513 7242 INFO odooevent odoo.modules.loading: loading iap_mail/data/mail_templates.xml 
+2026-02-10 12:34:22,546 7242 INFO odooevent odoo.modules.loading: Module iap_mail loaded in 0.09s, 36 queries (+36 other) 
+2026-02-10 12:34:22,546 7242 INFO odooevent odoo.modules.loading: Loading module mail_bot (23/39) 
+2026-02-10 12:34:22,589 7242 INFO odooevent odoo.modules.registry: module mail_bot: creating or updating database tables 
+2026-02-10 12:34:22,670 7242 INFO odooevent odoo.modules.loading: loading mail_bot/views/res_users_views.xml 
+2026-02-10 12:34:22,769 7242 INFO odooevent odoo.modules.loading: loading mail_bot/data/mailbot_data.xml 
+2026-02-10 12:34:22,796 7242 INFO odooevent odoo.modules.loading: Module mail_bot loaded in 0.25s, 152 queries (+152 other) 
+2026-02-10 12:34:22,796 7242 INFO odooevent odoo.modules.loading: Loading module phone_validation (24/39) 
+2026-02-10 12:34:22,864 7242 INFO odooevent odoo.modules.registry: module phone_validation: creating or updating database tables 
+2026-02-10 12:34:23,749 7242 INFO odooevent odoo.modules.loading: loading phone_validation/security/ir.model.access.csv 
+2026-02-10 12:34:23,756 7242 INFO odooevent odoo.modules.loading: loading phone_validation/views/phone_blacklist_views.xml 
+2026-02-10 12:34:23,785 7242 INFO odooevent odoo.modules.loading: loading phone_validation/wizard/phone_blacklist_remove_view.xml 
+2026-02-10 12:34:23,810 7242 INFO odooevent odoo.modules.loading: Module phone_validation loaded in 1.01s, 1390 queries (+1390 other) 
+2026-02-10 12:34:23,810 7242 INFO odooevent odoo.modules.loading: Loading module privacy_lookup (25/39) 
+2026-02-10 12:34:23,861 7242 INFO odooevent odoo.modules.registry: module privacy_lookup: creating or updating database tables 
+2026-02-10 12:34:23,989 7242 INFO odooevent odoo.modules.loading: loading privacy_lookup/wizard/privacy_lookup_wizard_views.xml 
+2026-02-10 12:34:24,020 7242 INFO odooevent odoo.modules.loading: loading privacy_lookup/views/privacy_log_views.xml 
+2026-02-10 12:34:24,041 7242 INFO odooevent odoo.modules.loading: loading privacy_lookup/security/ir.model.access.csv 
+2026-02-10 12:34:24,054 7242 INFO odooevent odoo.modules.loading: loading privacy_lookup/data/ir_actions_server_data.xml 
+2026-02-10 12:34:24,085 7242 INFO odooevent odoo.modules.loading: Module privacy_lookup loaded in 0.27s, 241 queries (+241 other) 
+2026-02-10 12:34:24,085 7242 INFO odooevent odoo.modules.loading: Loading module partner_autocomplete (27/39) 
+2026-02-10 12:34:24,129 7242 INFO odooevent odoo.modules.registry: module partner_autocomplete: creating or updating database tables 
+2026-02-10 12:34:24,229 7242 INFO odooevent odoo.modules.loading: loading partner_autocomplete/security/ir.model.access.csv 
+2026-02-10 12:34:24,237 7242 INFO odooevent odoo.modules.loading: loading partner_autocomplete/views/res_partner_views.xml 
+2026-02-10 12:34:24,254 7242 INFO odooevent odoo.modules.loading: loading partner_autocomplete/views/res_company_views.xml 
+2026-02-10 12:34:24,263 7242 INFO odooevent odoo.modules.loading: loading partner_autocomplete/views/res_config_settings_views.xml 
+2026-02-10 12:34:24,275 7242 INFO odooevent odoo.modules.loading: loading partner_autocomplete/data/cron.xml 
+2026-02-10 12:34:24,304 7242 INFO odooevent odoo.modules.loading: Module partner_autocomplete loaded in 0.22s, 191 queries (+191 other) 
+2026-02-10 12:34:24,304 7242 INFO odooevent odoo.modules.loading: Loading module portal (28/39) 
+2026-02-10 12:34:24,351 7242 INFO odooevent odoo.modules.registry: module portal: creating or updating database tables 
+2026-02-10 12:34:24,569 7242 INFO odooevent odoo.modules.loading: loading portal/security/ir.model.access.csv 
+2026-02-10 12:34:24,578 7242 INFO odooevent odoo.modules.loading: loading portal/data/mail_template_data.xml 
+2026-02-10 12:34:24,584 7242 INFO odooevent odoo.modules.loading: loading portal/data/mail_templates.xml 
+2026-02-10 12:34:24,590 7242 INFO odooevent odoo.modules.loading: loading portal/views/mail_templates_public.xml 
+2026-02-10 12:34:24,597 7242 INFO odooevent odoo.modules.loading: loading portal/views/portal_templates.xml 
+2026-02-10 12:34:24,696 7242 INFO odooevent odoo.modules.loading: loading portal/views/res_config_settings_views.xml 
+2026-02-10 12:34:24,708 7242 INFO odooevent odoo.modules.loading: loading portal/wizard/portal_share_views.xml 
+2026-02-10 12:34:24,718 7242 INFO odooevent odoo.modules.loading: loading portal/wizard/portal_wizard_views.xml 
+2026-02-10 12:34:24,748 7242 INFO odooevent odoo.modules.loading: Module portal loaded in 0.44s, 454 queries (+454 other) 
+2026-02-10 12:34:24,749 7242 INFO odooevent odoo.modules.loading: Loading module sms (29/39) 
+2026-02-10 12:34:24,822 7242 INFO odooevent odoo.modules.registry: module sms: creating or updating database tables 
+2026-02-10 12:34:24,829 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.sms_template_id 
+2026-02-10 12:34:24,829 7242 INFO odooevent odoo.models: Prepare computation of ir.actions.server.sms_method 
+2026-02-10 12:34:24,860 7242 INFO odooevent odoo.models: Prepare computation of res.partner.phone_sanitized 
+2026-02-10 12:34:25,910 7242 INFO odooevent odoo.modules.loading: loading sms/data/ir_cron_data.xml 
+2026-02-10 12:34:25,918 7242 INFO odooevent odoo.modules.loading: loading sms/wizard/sms_composer_views.xml 
+2026-02-10 12:34:25,930 7242 INFO odooevent odoo.modules.loading: loading sms/wizard/sms_template_preview_views.xml 
+2026-02-10 12:34:25,938 7242 INFO odooevent odoo.modules.loading: loading sms/wizard/sms_resend_views.xml 
+2026-02-10 12:34:25,948 7242 INFO odooevent odoo.modules.loading: loading sms/wizard/sms_template_reset_views.xml 
+2026-02-10 12:34:25,956 7242 INFO odooevent odoo.modules.loading: loading sms/views/ir_actions_server_views.xml 
+2026-02-10 12:34:25,966 7242 INFO odooevent odoo.modules.loading: loading sms/views/mail_notification_views.xml 
+2026-02-10 12:34:25,978 7242 INFO odooevent odoo.modules.loading: loading sms/views/res_config_settings_views.xml 
+2026-02-10 12:34:25,990 7242 INFO odooevent odoo.modules.loading: loading sms/views/res_partner_views.xml 
+2026-02-10 12:34:26,019 7242 INFO odooevent odoo.modules.loading: loading sms/views/sms_sms_views.xml 
+2026-02-10 12:34:26,042 7242 INFO odooevent odoo.modules.loading: loading sms/views/sms_template_views.xml 
+2026-02-10 12:34:26,062 7242 INFO odooevent odoo.modules.loading: loading sms/security/ir.model.access.csv 
+2026-02-10 12:34:26,084 7242 INFO odooevent odoo.modules.loading: loading sms/security/sms_security.xml 
+2026-02-10 12:34:26,113 7242 INFO odooevent odoo.modules.loading: Module sms loaded in 1.36s, 1798 queries (+1798 other) 
+2026-02-10 12:34:26,113 7242 INFO odooevent odoo.modules.loading: Loading module snailmail (30/39) 
+2026-02-10 12:34:26,163 7242 INFO odooevent odoo.modules.registry: module snailmail: creating or updating database tables 
+2026-02-10 12:34:26,478 7242 INFO odooevent odoo.modules.loading: loading snailmail/data/snailmail_data.xml 
+2026-02-10 12:34:26,490 7242 INFO odooevent odoo.modules.loading: loading snailmail/views/report_assets.xml 
+2026-02-10 12:34:26,505 7242 INFO odooevent odoo.modules.loading: loading snailmail/views/snailmail_views.xml 
+2026-02-10 12:34:26,525 7242 INFO odooevent odoo.modules.loading: loading snailmail/wizard/snailmail_letter_format_error_views.xml 
+2026-02-10 12:34:26,535 7242 INFO odooevent odoo.modules.loading: loading snailmail/wizard/snailmail_letter_missing_required_fields_views.xml 
+2026-02-10 12:34:26,543 7242 INFO odooevent odoo.modules.loading: loading snailmail/security/ir.model.access.csv 
+2026-02-10 12:34:26,572 7242 INFO odooevent odoo.modules.loading: Module snailmail loaded in 0.46s, 396 queries (+396 other) 
+2026-02-10 12:34:26,572 7242 INFO odooevent odoo.modules.loading: Loading module auth_totp_portal (31/39) 
+2026-02-10 12:34:26,619 7242 INFO odooevent odoo.modules.registry: module auth_totp_portal: creating or updating database tables 
+2026-02-10 12:34:26,648 7242 INFO odooevent odoo.modules.loading: loading auth_totp_portal/security/security.xml 
+2026-02-10 12:34:26,661 7242 INFO odooevent odoo.modules.loading: loading auth_totp_portal/views/templates.xml 
+2026-02-10 12:34:26,685 7242 INFO odooevent odoo.modules.loading: Module auth_totp_portal loaded in 0.11s, 66 queries (+66 other) 
+2026-02-10 12:34:26,685 7242 INFO odooevent odoo.modules.loading: Loading module digest (32/39) 
+2026-02-10 12:34:26,732 7242 INFO odooevent odoo.modules.registry: module digest: creating or updating database tables 
+2026-02-10 12:34:26,852 7242 INFO odooevent odoo.modules.loading: loading digest/security/ir.model.access.csv 
+2026-02-10 12:34:26,861 7242 INFO odooevent odoo.modules.loading: loading digest/data/digest_data.xml 
+2026-02-10 12:34:26,880 7242 INFO odooevent odoo.modules.loading: loading digest/data/digest_tips_data.xml 
+2026-02-10 12:34:26,896 7242 INFO odooevent odoo.modules.loading: loading digest/data/ir_cron_data.xml 
+2026-02-10 12:34:26,905 7242 INFO odooevent odoo.modules.loading: loading digest/data/res_config_settings_data.xml 
+2026-02-10 12:34:26,911 7242 INFO odooevent odoo.modules.loading: loading digest/views/digest_views.xml 
+2026-02-10 12:34:26,952 7242 INFO odooevent odoo.modules.loading: loading digest/views/digest_templates.xml 
+2026-02-10 12:34:26,956 7242 INFO odooevent odoo.modules.loading: loading digest/views/res_config_settings_views.xml 
+2026-02-10 12:34:26,994 7242 INFO odooevent odoo.modules.loading: Module digest loaded in 0.31s, 291 queries (+291 other) 
+2026-02-10 12:34:26,994 7242 INFO odooevent odoo.modules.loading: Loading module event (33/39) 
+2026-02-10 12:34:27,079 7242 INFO odooevent odoo.modules.registry: module event: creating or updating database tables 
+2026-02-10 12:34:27,538 7242 INFO odooevent odoo.modules.loading: loading event/security/event_security.xml 
+2026-02-10 12:34:27,697 7242 INFO odooevent odoo.modules.loading: loading event/security/ir.model.access.csv 
+2026-02-10 12:34:27,724 7242 INFO odooevent odoo.modules.loading: loading event/views/event_menu_views.xml 
+2026-02-10 12:34:27,757 7242 INFO odooevent odoo.modules.loading: loading event/views/event_ticket_views.xml 
+2026-02-10 12:34:27,798 7242 INFO odooevent odoo.modules.loading: loading event/views/event_mail_views.xml 
+2026-02-10 12:34:27,814 7242 INFO odooevent odoo.modules.loading: loading event/views/event_registration_views.xml 
+2026-02-10 12:34:27,887 7242 INFO odooevent odoo.modules.loading: loading event/views/event_type_views.xml 
+2026-02-10 12:34:27,906 7242 INFO odooevent odoo.modules.loading: loading event/views/event_event_views.xml 
+2026-02-10 12:34:27,959 7242 INFO odooevent odoo.modules.loading: loading event/views/event_stage_views.xml 
+2026-02-10 12:34:27,974 7242 INFO odooevent odoo.modules.loading: loading event/report/event_event_templates.xml 
+2026-02-10 12:34:28,018 7242 INFO odooevent odoo.modules.loading: loading event/report/event_event_reports.xml 
+2026-02-10 12:34:28,042 7242 INFO odooevent odoo.modules.loading: loading event/report/event_registration_report.xml 
+2026-02-10 12:34:28,057 7242 INFO odooevent odoo.modules.loading: loading event/data/ir_cron_data.xml 
+2026-02-10 12:34:28,067 7242 INFO odooevent odoo.modules.loading: loading event/data/mail_template_data.xml 
+2026-02-10 12:34:28,085 7242 INFO odooevent odoo.modules.loading: loading event/data/event_data.xml 
+2026-02-10 12:34:28,098 7242 INFO odooevent odoo.modules.loading: loading event/views/res_config_settings_views.xml 
+2026-02-10 12:34:28,123 7242 INFO odooevent odoo.modules.loading: loading event/views/event_templates.xml 
+2026-02-10 12:34:28,129 7242 INFO odooevent odoo.modules.loading: loading event/views/res_partner_views.xml 
+2026-02-10 12:34:28,141 7242 INFO odooevent odoo.modules.loading: loading event/views/event_tag_views.xml 
+2026-02-10 12:34:28,196 7242 INFO odooevent odoo.modules.loading: Module event loaded in 1.20s, 1152 queries (+1152 other) 
+2026-02-10 12:34:28,196 7242 INFO odooevent odoo.modules.loading: Loading module event_sms (34/39) 
+2026-02-10 12:34:28,251 7242 INFO odooevent odoo.modules.registry: module event_sms: creating or updating database tables 
+2026-02-10 12:34:28,297 7242 INFO odooevent odoo.modules.loading: loading event_sms/data/sms_data.xml 
+2026-02-10 12:34:28,306 7242 INFO odooevent odoo.modules.loading: loading event_sms/security/ir.model.access.csv 
+2026-02-10 12:34:28,314 7242 INFO odooevent odoo.modules.loading: loading event_sms/security/sms_security.xml 
+2026-02-10 12:34:28,338 7242 INFO odooevent odoo.modules.loading: Module event_sms loaded in 0.14s, 83 queries (+83 other) 
+2026-02-10 12:34:28,338 7242 INFO odooevent odoo.modules.loading: Loading module website (35/39) 
+2026-02-10 12:34:28,548 7242 INFO odooevent odoo.modules.registry: module website: creating or updating database tables 
+2026-02-10 12:34:28,680 7242 INFO odooevent odoo.models: Prepare computation of res.company.website_id 
+2026-02-10 12:34:30,309 7242 INFO odooevent odoo.modules.loading: loading website/security/website_security.xml 
+2026-02-10 12:34:30,630 7242 INFO odooevent odoo.modules.loading: loading website/security/ir.model.access.csv 
+2026-02-10 12:34:30,664 7242 INFO odooevent odoo.modules.loading: loading website/data/image_library.xml 
+2026-02-10 12:34:30,873 7242 INFO odooevent odoo.modules.loading: loading website/data/ir_asset.xml 
+2026-02-10 12:34:30,883 7242 INFO odooevent odoo.modules.loading: loading website/data/ir_cron_data.xml 
+2026-02-10 12:34:30,893 7242 INFO odooevent odoo.modules.loading: loading website/data/mail_mail_data.xml 
+2026-02-10 12:34:30,906 7242 INFO odooevent odoo.modules.loading: loading website/data/website_data.xml 
+2026-02-10 12:34:31,066 7242 INFO odooevent odoo.modules.loading: loading website/data/website_visitor_cron.xml 
+2026-02-10 12:34:31,073 7242 INFO odooevent odoo.modules.loading: loading website/data/digest_data.xml 
+2026-02-10 12:34:31,086 7242 INFO odooevent odoo.modules.loading: loading website/views/website_templates.xml 
+2026-02-10 12:34:31,964 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/snippets.xml 
+2026-02-10 12:34:32,050 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_title.xml 
+2026-02-10 12:34:32,058 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_cover.xml 
+2026-02-10 12:34:32,063 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_text_cover.xml 
+2026-02-10 12:34:32,070 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_text_image.xml 
+2026-02-10 12:34:32,077 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_image_text.xml 
+2026-02-10 12:34:32,082 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_instagram_page.xml 
+2026-02-10 12:34:32,099 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_banner.xml 
+2026-02-10 12:34:32,105 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_text_block.xml 
+2026-02-10 12:34:32,111 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_features.xml 
+2026-02-10 12:34:32,116 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_three_columns.xml 
+2026-02-10 12:34:32,124 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_picture.xml 
+2026-02-10 12:34:32,130 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_carousel.xml 
+2026-02-10 12:34:32,137 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_alert.xml 
+2026-02-10 12:34:32,154 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_card.xml 
+2026-02-10 12:34:32,161 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_share.xml 
+2026-02-10 12:34:32,170 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_social_media.xml 
+2026-02-10 12:34:32,188 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_rating.xml 
+2026-02-10 12:34:32,209 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_hr.xml 
+2026-02-10 12:34:32,227 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_facebook_page.xml 
+2026-02-10 12:34:32,244 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_image_gallery.xml 
+2026-02-10 12:34:32,274 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_countdown.xml 
+2026-02-10 12:34:32,296 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_product_catalog.xml 
+2026-02-10 12:34:32,325 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_comparisons.xml 
+2026-02-10 12:34:32,333 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_company_team.xml 
+2026-02-10 12:34:32,341 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_call_to_action.xml 
+2026-02-10 12:34:32,346 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_references.xml 
+2026-02-10 12:34:32,353 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_popup.xml 
+2026-02-10 12:34:32,378 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_faq_collapse.xml 
+2026-02-10 12:34:32,398 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_features_grid.xml 
+2026-02-10 12:34:32,406 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_tabs.xml 
+2026-02-10 12:34:32,428 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_table_of_content.xml 
+2026-02-10 12:34:32,450 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_chart.xml 
+2026-02-10 12:34:32,471 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_parallax.xml 
+2026-02-10 12:34:32,477 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_quotes_carousel.xml 
+2026-02-10 12:34:32,487 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_numbers.xml 
+2026-02-10 12:34:32,493 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_masonry_block.xml 
+2026-02-10 12:34:32,567 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_media_list.xml 
+2026-02-10 12:34:32,592 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_showcase.xml 
+2026-02-10 12:34:32,616 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_timeline.xml 
+2026-02-10 12:34:32,638 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_process_steps.xml 
+2026-02-10 12:34:32,662 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_text_highlight.xml 
+2026-02-10 12:34:32,669 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_progress_bar.xml 
+2026-02-10 12:34:32,688 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_blockquote.xml 
+2026-02-10 12:34:32,711 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_badge.xml 
+2026-02-10 12:34:32,734 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_color_blocks_2.xml 
+2026-02-10 12:34:32,741 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_product_list.xml 
+2026-02-10 12:34:32,751 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_multi_menus.xml 
+2026-02-10 12:34:32,758 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_menu_image_menu.xml 
+2026-02-10 12:34:32,764 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_thumbnails.xml 
+2026-02-10 12:34:32,778 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_little_icons.xml 
+2026-02-10 12:34:32,787 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_images_subtitles.xml 
+2026-02-10 12:34:32,801 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_menus_logos.xml 
+2026-02-10 12:34:32,810 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_odoo_menu.xml 
+2026-02-10 12:34:32,820 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_big_icons_subtitles.xml 
+2026-02-10 12:34:32,831 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_mega_menu_cards.xml 
+2026-02-10 12:34:32,844 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_google_map.xml 
+2026-02-10 12:34:32,869 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_map.xml 
+2026-02-10 12:34:32,896 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_dynamic_snippet.xml 
+2026-02-10 12:34:32,931 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_dynamic_snippet_carousel.xml 
+2026-02-10 12:34:32,962 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_embed_code.xml 
+2026-02-10 12:34:32,986 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_website_controller_page_listing_layout.xml 
+2026-02-10 12:34:33,004 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_website_form.xml 
+2026-02-10 12:34:33,041 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_searchbar.xml 
+2026-02-10 12:34:33,074 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_button.xml 
+2026-02-10 12:34:33,080 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_image.xml 
+2026-02-10 12:34:33,085 7242 INFO odooevent odoo.modules.loading: loading website/views/snippets/s_video.xml 
+2026-02-10 12:34:33,091 7242 INFO odooevent odoo.modules.loading: loading website/views/new_page_template_templates.xml 
+2026-02-10 12:34:34,248 7242 INFO odooevent odoo.addons.website.models.ir_module_module: Generated 204 primary snippet templates for 'website' 
+2026-02-10 12:34:34,318 7242 INFO odooevent odoo.addons.website.models.ir_module_module: Generated 39 primary page templates for 'website' 
+2026-02-10 12:34:34,319 7242 INFO odooevent odoo.modules.loading: loading website/views/website_views.xml 
+2026-02-10 12:34:34,457 7242 INFO odooevent odoo.modules.loading: loading website/views/website_pages_views.xml 
+2026-02-10 12:34:34,506 7242 INFO odooevent odoo.modules.loading: loading website/views/website_controller_pages_views.xml 
+2026-02-10 12:34:34,523 7242 INFO odooevent odoo.modules.loading: loading website/views/website_visitor_views.xml 
+2026-02-10 12:34:34,599 7242 INFO odooevent odoo.modules.loading: loading website/views/res_config_settings_views.xml 
+2026-02-10 12:34:34,664 7242 INFO odooevent odoo.modules.loading: loading website/views/website_rewrite.xml 
+2026-02-10 12:34:34,686 7242 INFO odooevent odoo.modules.loading: loading website/views/ir_actions_server_views.xml 
+2026-02-10 12:34:34,710 7242 INFO odooevent odoo.modules.loading: loading website/views/ir_asset_views.xml 
+2026-02-10 12:34:34,724 7242 INFO odooevent odoo.modules.loading: loading website/views/ir_attachment_views.xml 
+2026-02-10 12:34:34,737 7242 INFO odooevent odoo.modules.loading: loading website/views/ir_model_views.xml 
+2026-02-10 12:34:34,756 7242 INFO odooevent odoo.modules.loading: loading website/views/res_partner_views.xml 
+2026-02-10 12:34:34,768 7242 INFO odooevent odoo.modules.loading: loading website/views/neutralize_views.xml 
+2026-02-10 12:34:34,781 7242 INFO odooevent odoo.modules.loading: loading website/wizard/base_language_install_views.xml 
+2026-02-10 12:34:34,788 7242 INFO odooevent odoo.modules.loading: loading website/wizard/website_robots.xml 
+2026-02-10 12:34:34,795 7242 INFO odooevent odoo.modules.loading: loading website/data/update_theme_images.xml 
+2026-02-10 12:34:34,862 7242 INFO odooevent odoo.addons.website.models.ir_module_module: Generated 23 primary snippet templates for 'theme_default' 
+2026-02-10 12:34:34,919 7242 INFO odooevent odoo.modules.loading: Module website loaded in 6.58s, 7853 queries (+7853 other) 
+2026-02-10 12:34:34,919 7242 INFO odooevent odoo.modules.loading: Loading module website_mail (36/39) 
+2026-02-10 12:34:34,983 7242 INFO odooevent odoo.modules.registry: module website_mail: creating or updating database tables 
+2026-02-10 12:34:34,995 7242 INFO odooevent odoo.modules.loading: loading website_mail/views/website_mail_templates.xml 
+2026-02-10 12:34:35,029 7242 INFO odooevent odoo.modules.loading: Module website_mail loaded in 0.11s, 28 queries (+28 other) 
+2026-02-10 12:34:35,029 7242 INFO odooevent odoo.modules.loading: Loading module website_partner (37/39) 
+2026-02-10 12:34:35,093 7242 INFO odooevent odoo.modules.registry: module website_partner: creating or updating database tables 
+2026-02-10 12:34:35,164 7242 INFO odooevent odoo.modules.loading: loading website_partner/views/res_partner_views.xml 
+2026-02-10 12:34:35,182 7242 INFO odooevent odoo.modules.loading: loading website_partner/views/website_partner_templates.xml 
+2026-02-10 12:34:35,193 7242 INFO odooevent odoo.modules.loading: loading website_partner/data/website_partner_data.xml 
+2026-02-10 12:34:35,226 7242 INFO odooevent odoo.modules.loading: Module website_partner loaded in 0.20s, 125 queries (+125 other) 
+2026-02-10 12:34:35,226 7242 INFO odooevent odoo.modules.loading: Loading module website_sms (38/39) 
+2026-02-10 12:34:35,287 7242 INFO odooevent odoo.modules.registry: module website_sms: creating or updating database tables 
+2026-02-10 12:34:35,308 7242 INFO odooevent odoo.modules.loading: loading website_sms/views/website_visitor_views.xml 
+2026-02-10 12:34:35,361 7242 INFO odooevent odoo.modules.loading: Module website_sms loaded in 0.14s, 59 queries (+59 other) 
+2026-02-10 12:34:35,361 7242 INFO odooevent odoo.modules.loading: Loading module website_event (39/39) 
+2026-02-10 12:34:35,448 7242 INFO odooevent odoo.modules.registry: module website_event: creating or updating database tables 
+2026-02-10 12:34:35,735 7242 INFO odooevent odoo.modules.loading: loading website_event/data/event_data.xml 
+2026-02-10 12:34:35,762 7242 INFO odooevent odoo.modules.loading: loading website_event/data/website_snippet_data.xml 
+2026-02-10 12:34:35,772 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_snippets.xml 
+2026-02-10 12:34:35,927 7242 INFO odooevent odoo.modules.loading: loading website_event/views/snippets/s_events.xml 
+2026-02-10 12:34:35,975 7242 INFO odooevent odoo.modules.loading: loading website_event/views/snippets/snippets.xml 
+2026-02-10 12:34:36,024 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_templates_list.xml 
+2026-02-10 12:34:36,112 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_templates_svg.xml 
+2026-02-10 12:34:36,119 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_templates_page.xml 
+2026-02-10 12:34:36,130 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_templates_page_registration.xml 
+2026-02-10 12:34:36,173 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_templates_page_misc.xml 
+2026-02-10 12:34:36,191 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_templates_widgets.xml 
+2026-02-10 12:34:36,213 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_event_views.xml 
+2026-02-10 12:34:36,240 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_registration_views.xml 
+2026-02-10 12:34:36,280 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_question_views.xml 
+2026-02-10 12:34:36,286 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_registration_answer_views.xml 
+2026-02-10 12:34:36,309 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_tag_category_views.xml 
+2026-02-10 12:34:36,325 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_tag_views.xml 
+2026-02-10 12:34:36,333 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_type_views.xml 
+2026-02-10 12:34:36,342 7242 INFO odooevent odoo.modules.loading: loading website_event/views/website_event_menu_views.xml 
+2026-02-10 12:34:36,360 7242 INFO odooevent odoo.modules.loading: loading website_event/views/website_visitor_views.xml 
+2026-02-10 12:34:36,381 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_menus.xml 
+2026-02-10 12:34:36,389 7242 INFO odooevent odoo.modules.loading: loading website_event/views/website_pages_views.xml 
+2026-02-10 12:34:36,421 7242 INFO odooevent odoo.modules.loading: loading website_event/views/event_event_add.xml 
+2026-02-10 12:34:36,431 7242 INFO odooevent odoo.modules.loading: loading website_event/security/ir.model.access.csv 
+2026-02-10 12:34:36,461 7242 INFO odooevent odoo.modules.loading: loading website_event/security/event_security.xml 
+2026-02-10 12:34:36,572 7242 INFO odooevent odoo.modules.loading: Module website_event loaded in 1.21s, 979 queries (+979 other) 
+2026-02-10 12:34:36,572 7242 INFO odooevent odoo.modules.loading: 39 modules loaded in 19.96s, 21176 queries (+21177 extra) 
+2026-02-10 12:34:37,192 7242 INFO odooevent odoo.modules.loading: Modules loaded. 
+2026-02-10 12:34:37,200 7242 INFO odooevent odoo.modules.registry: Registry loaded in 21.287s 
+2026-02-10 12:34:37,201 7242 INFO odooevent odoo.addons.base.models.ir_module: getting next ir.actions.todo() 
+2026-02-10 12:34:37,207 7242 INFO odooevent odoo.addons.base.models.ir_module: next action is "Start Website Configurator" 
+2026-02-10 12:34:37,221 7242 INFO odooevent odoo.modules.registry: Registry changed, signaling through the database 
+2026-02-10 12:34:37,223 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:37] "POST /web/dataset/call_button HTTP/1.1" 200 - 23524 11.833 9.607
+2026-02-10 12:34:37,238 7242 INFO odooevent odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2026-02-10 12:34:37,469 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:37] "GET /web?reload=true HTTP/1.1" 200 - 85 0.035 0.199
+2026-02-10 12:34:39,306 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:39] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.032 0.073
+2026-02-10 12:34:39,336 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/4cc1604/web.assets_web.min.css (id:143) 
+2026-02-10 12:34:39,337 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Deleting attachments [17] (matching /web/assets/_______/web.assets_web.min.css) because it was replaced with /web/assets/4cc1604/web.assets_web.min.css 
+2026-02-10 12:34:39,360 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:39] "GET /web/assets/4cc1604/web.assets_web.min.css HTTP/1.1" 200 - 32 0.042 1.820
+2026-02-10 12:34:41,269 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/d907db2/web.assets_web.min.js (id:144) 
+2026-02-10 12:34:41,270 7242 INFO odooevent odoo.addons.base.models.assetsbundle: Deleting attachments [18] (matching /web/assets/_______/web.assets_web.min.js) because it was replaced with /web/assets/d907db2/web.assets_web.min.js 
+2026-02-10 12:34:41,296 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "GET /web/assets/d907db2/web.assets_web.min.js HTTP/1.1" 200 - 29 0.020 3.773
+2026-02-10 12:34:41,320 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "GET /web/webclient/load_menus/587d99af3750dbb6b76282c1448979e4c0f5e2d7ecfcd3a79f44ebd192d1c888 HTTP/1.1" 200 - 4 0.005 0.008
+2026-02-10 12:34:41,320 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "GET /web/webclient/translations/7f443a87dfb9c8aae8d1a0f25e51502af7e25b7a?lang=en_US HTTP/1.1" 200 - 3 0.005 0.007
+2026-02-10 12:34:41,330 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "GET /web/offline HTTP/1.1" 200 - 6 0.007 0.014
+2026-02-10 12:34:41,702 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "POST /web/action/load HTTP/1.1" 200 - 6 0.002 0.006
+2026-02-10 12:34:41,722 7242 INFO odooevent odoo.addons.partner_autocomplete.models.res_company: Starting enrich of company My Company (1) 
+2026-02-10 12:34:41,739 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "POST /web/dataset/call_kw/res.company/iap_enrich_auto HTTP/1.1" 200 - 10 0.010 0.019
+2026-02-10 12:34:41,769 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 4 0.004 0.008
+2026-02-10 12:34:41,813 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 8 0.008 0.019
+2026-02-10 12:34:41,841 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "GET /bus/websocket_worker_bundle?v=17.0-3 HTTP/1.1" 304 - 4 0.003 0.009
+2026-02-10 12:34:41,842 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "POST /web/dataset/call_kw/website/get_current_website HTTP/1.1" 200 - 1 0.000 0.006
+2026-02-10 12:34:41,864 7242 INFO odooevent odoo.addons.iap.tools.iap_tools: iap jsonrpc https://website.api.odoo.com/api/website/1/configurator/industries 
+2026-02-10 12:34:41,871 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "GET /websocket?version=17.0-3 HTTP/1.1" 101 - 1 0.002 0.022
+2026-02-10 12:34:41,872 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "POST /mail/init_messaging HTTP/1.1" 200 - 89 0.074 0.090
+2026-02-10 12:34:41,884 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:41] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.001 0.005
+2026-02-10 12:34:42,311 7242 INFO odooevent odoo.addons.iap.tools.iap_tools: iap jsonrpc https://website.api.odoo.com/api/website/1/configurator/industries answered in 0.397033 seconds 
+2026-02-10 12:34:42,318 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:42] "POST /web/dataset/call_kw/website/configurator_init HTTP/1.1" 200 - 12 0.006 0.465
+2026-02-10 12:34:42,337 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:42] "GET /web/static/img/odoo_logo.svg HTTP/1.1" 200 - 0 0.000 0.001
+2026-02-10 12:34:42,732 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:42] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.006
+2026-02-10 12:34:44,203 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Base: Auto-vacuum internal data`. 
+2026-02-10 12:34:44,233 7242 INFO odooevent odoo.addons.base.models.ir_attachment: filestore gc 13 checked, 2 removed 
+2026-02-10 12:34:44,287 7242 INFO odooevent odoo.addons.base.models.res_users: GC'd 0 user log entries 
+2026-02-10 12:34:44,306 7242 INFO odooevent odoo.addons.auth_totp.models.auth_totp: GC'd 0 totp devices entries 
+2026-02-10 12:34:44,373 7242 INFO odooevent odoo.addons.sms.models.sms_sms: GC'd 0 sms marked for deletion 
+2026-02-10 12:34:44,408 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Base: Auto-vacuum internal data` (0.205s). 
+2026-02-10 12:34:44,420 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Mail: Email Queue Manager`. 
+2026-02-10 12:34:44,425 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Mail: Email Queue Manager` (0.004s). 
+2026-02-10 12:34:44,431 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Notification: Delete Notifications older than 6 Month`. 
+2026-02-10 12:34:44,434 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Notification: Delete Notifications older than 6 Month` (0.004s). 
+2026-02-10 12:34:44,441 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Notification: Send scheduled message notifications`. 
+2026-02-10 12:34:44,444 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Notification: Send scheduled message notifications` (0.003s). 
+2026-02-10 12:34:44,450 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Mail: send web push notification`. 
+2026-02-10 12:34:44,453 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Mail: send web push notification` (0.003s). 
+2026-02-10 12:34:44,460 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Discuss: channel member unmute`. 
+2026-02-10 12:34:44,463 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Discuss: channel member unmute` (0.003s). 
+2026-02-10 12:34:44,470 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Users: Notify About Unregistered Users`. 
+2026-02-10 12:34:44,475 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Users: Notify About Unregistered Users` (0.005s). 
+2026-02-10 12:34:44,482 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Partner Autocomplete: Sync with remote DB`. 
+2026-02-10 12:34:44,485 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Partner Autocomplete: Sync with remote DB` (0.002s). 
+2026-02-10 12:34:44,491 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `SMS: SMS Queue Manager`. 
+2026-02-10 12:34:44,494 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `SMS: SMS Queue Manager` (0.003s). 
+2026-02-10 12:34:44,501 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Snailmail: process letters queue`. 
+2026-02-10 12:34:44,504 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Snailmail: process letters queue` (0.003s). 
+2026-02-10 12:34:44,512 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Disable unused snippets assets`. 
+2026-02-10 12:34:45,074 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Disable unused snippets assets` (0.563s). 
+2026-02-10 12:34:45,085 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Website Visitor : clean inactive visitors`. 
+2026-02-10 12:34:45,088 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Website Visitor : clean inactive visitors` (0.003s). 
+2026-02-10 12:34:52,709 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:52] "POST /web/action/load HTTP/1.1" 200 - 9 0.005 0.014
+2026-02-10 12:34:52,816 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:52] "POST /web/dataset/call_kw/ir.module.module/get_views HTTP/1.1" 200 - 46 0.016 0.043
+2026-02-10 12:34:52,833 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:52] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 1 0.000 0.005
+2026-02-10 12:34:52,873 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:52] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 39 0.023 0.020
+2026-02-10 12:34:52,878 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:52] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 3 0.003 0.040
+2026-02-10 12:34:53,394 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 12:34:53] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.006
+2026-02-10 12:35:45,126 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Base: Auto-vacuum internal data`. 
+2026-02-10 12:35:45,152 7242 INFO odooevent odoo.addons.base.models.ir_attachment: filestore gc 0 checked, 0 removed 
+2026-02-10 12:35:45,213 7242 INFO odooevent odoo.addons.base.models.res_users: GC'd 0 user log entries 
+2026-02-10 12:35:45,235 7242 INFO odooevent odoo.addons.auth_totp.models.auth_totp: GC'd 0 totp devices entries 
+2026-02-10 12:35:45,248 7242 INFO odooevent odoo.models.unlink: User #1 deleted bus.bus records with IDs: [1, 2, 3] 
+2026-02-10 12:35:45,330 7242 INFO odooevent odoo.addons.sms.models.sms_sms: GC'd 0 sms marked for deletion 
+2026-02-10 12:35:45,373 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Base: Auto-vacuum internal data` (0.248s). 
+2026-02-10 12:49:46,161 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Event: Mail Scheduler`. 
+2026-02-10 12:49:46,170 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Event: Mail Scheduler` (0.009s). 
+2026-02-10 13:28:08,039 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "GET /web HTTP/1.1" 200 - 12 0.004 0.013
+2026-02-10 13:28:08,499 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "POST /web/action/load HTTP/1.1" 200 - 9 0.003 0.011
+2026-02-10 13:28:08,536 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "POST /mail/init_messaging HTTP/1.1" 200 - 32 0.011 0.024
+2026-02-10 13:28:08,541 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.001 0.003
+2026-02-10 13:28:08,578 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 8 0.003 0.011
+2026-02-10 13:28:08,599 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.001 0.004
+2026-02-10 13:28:08,623 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "GET /bus/websocket_worker_bundle?v=17.0-3 HTTP/1.1" 304 - 3 0.001 0.019
+2026-02-10 13:28:08,635 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "POST /web/dataset/call_kw/ir.module.module/get_views HTTP/1.1" 200 - 2 0.002 0.024
+2026-02-10 13:28:08,637 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "GET /websocket?version=17.0-3 HTTP/1.1" 101 - 1 0.000 0.003
+2026-02-10 13:28:08,652 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 1 0.001 0.005
+2026-02-10 13:28:08,689 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 36 0.023 0.019
+2026-02-10 13:28:08,697 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:08] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 3 0.006 0.039
+2026-02-10 13:28:09,049 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:09] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.000 0.002
+2026-02-10 13:28:11,338 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:11] "POST /web/dataset/call_kw/discuss.channel/channel_fetch_preview HTTP/1.1" 200 - 21 0.009 0.017
+2026-02-10 13:28:11,381 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:11] "GET /discuss/channel/1/avatar_128?unique=324602ada0efc6dbd561c4c12828148f3aefd095a20176fafd7337d1ef2fbe455d70cd4614dee49aeabcc6b69c74bc66de33da0b1e813bfb0853e20de2baa537 HTTP/1.1" 200 - 4 0.010 0.025
+2026-02-10 13:28:11,385 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:11] "GET /web/image?field=avatar_128&id=2&model=res.partner&unique=2026-02-10%2012:34:28 HTTP/1.1" 200 - 7 0.012 0.027
+2026-02-10 13:28:11,389 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:11] "GET /web/image/res.partner/2/avatar_128?unique=2026-02-10%2012:34:28 HTTP/1.1" 200 - 7 0.014 0.027
+2026-02-10 13:28:27,265 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "POST /web/action/load HTTP/1.1" 200 - 8 0.006 0.015
+2026-02-10 13:28:27,333 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 16 0.007 0.037
+2026-02-10 13:28:27,396 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 63 0.015 0.024
+2026-02-10 13:28:27,499 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "POST /base_setup/demo_active HTTP/1.1" 200 - 3 0.002 0.003
+2026-02-10 13:28:27,516 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "POST /base_setup/data HTTP/1.1" 200 - 6 0.002 0.003
+2026-02-10 13:28:27,571 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "GET /base/static/description/settings.png HTTP/1.1" 200 - 0 0.000 0.002
+2026-02-10 13:28:27,572 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "GET /event/static/description/icon.png HTTP/1.1" 200 - 0 0.000 0.002
+2026-02-10 13:28:27,612 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "GET /base_setup/static/src/img/app_store.png HTTP/1.1" 200 - 0 0.000 0.002
+2026-02-10 13:28:27,613 7242 INFO ? werkzeug: 127.0.0.1 - - [10/Feb/2026 13:28:27] "GET /base_setup/static/src/img/google_play.png HTTP/1.1" 200 - 0 0.000 0.003
+2026-02-10 13:29:06,437 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:29:06] "POST /web/action/load HTTP/1.1" 200 - 11 0.007 0.023
+2026-02-10 13:29:06,576 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:29:06] "POST /web/dataset/call_kw/res.users/get_views HTTP/1.1" 200 - 67 0.022 0.082
+2026-02-10 13:29:06,596 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:29:06] "POST /web/dataset/call_kw/res.users/has_group HTTP/1.1" 200 - 2 0.001 0.005
+2026-02-10 13:29:06,603 7242 INFO odooevent werkzeug: 127.0.0.1 - - [10/Feb/2026 13:29:06] "POST /web/dataset/call_kw/res.users/web_search_read HTTP/1.1" 200 - 8 0.004 0.009
+2026-02-10 13:34:48,717 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Mail: Email Queue Manager`. 
+2026-02-10 13:34:48,726 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Mail: Email Queue Manager` (0.009s). 
+2026-02-10 13:34:48,741 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Notification: Send scheduled message notifications`. 
+2026-02-10 13:34:48,747 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Notification: Send scheduled message notifications` (0.005s). 
+2026-02-10 13:34:48,757 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Partner Autocomplete: Sync with remote DB`. 
+2026-02-10 13:34:48,761 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Partner Autocomplete: Sync with remote DB` (0.004s). 
+2026-02-10 13:34:48,771 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `SMS: SMS Queue Manager`. 
+2026-02-10 13:34:48,776 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `SMS: SMS Queue Manager` (0.005s). 
+2026-02-10 13:34:48,786 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Snailmail: process letters queue`. 
+2026-02-10 13:34:48,791 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Snailmail: process letters queue` (0.005s). 
+2026-02-10 13:49:49,722 7242 INFO odooevent odoo.addons.base.models.ir_cron: Starting job `Event: Mail Scheduler`. 
+2026-02-10 13:49:49,728 7242 INFO odooevent odoo.addons.base.models.ir_cron: Job done: `Event: Mail Scheduler` (0.006s). 
