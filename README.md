@@ -1,2 +1,60 @@
-# Odoo 17 Local Installation  
-Ce dépôt contient une version locale d’Odoo 17 prête à installer et à configurer sur Ubuntu 22.04/24.04. **Prérequis système** : installez les paquets essentiels avec `sudo apt update && sudo apt install -y git python3 python3-pip python3-venv python3-setuptools postgresql postgresql-contrib build-essential libxml2-dev libxslt1-dev libjpeg-dev zlib1g-dev libpq-dev libldap2-dev libsasl2-dev libffi-dev wkhtmltopdf nodejs npm`. **Cloner ce repo** : `git clone https://github.com/tonpseudo/odoo17.git && cd odoo17`. **Créer et activer le venv Python** : `python3 -m venv venv --upgrade-deps && source venv/bin/activate`. Vérifiez le venv avec `which python`. **Installer pip et setuptools compatibles** : `pip install --upgrade pip && pip uninstall -y setuptools && pip install "setuptools<70" wheel`. **Installer les dépendances Python d’Odoo** : si `requirements.txt` est présent `pip install -r requirements.txt`, sinon installer les principaux manuellement : `pip install werkzeug num2words Babel decorator Jinja2 lxml psycopg2-binary PyPDF2 pillow markupsafe passlib`. **Configurer PostgreSQL** : `sudo -u postgres createuser -s odooevent && sudo -u postgres psql` puis dans psql `\password odooevent` (exemple : odoo17) et `\q`. **Configurer le fichier odoo.conf** : créez `odoo.conf` dans le dossier `odoo17` avec `[options] admin_passwd = admin db_host = False db_port = False db_user = odooevent db_password = odoo17 addons_path = addons,custom_addons xmlrpc_interface = 0.0.0.0 xmlrpc_port = 8069 longpolling_port = 8072 logfile = odoo.log log_level = info workers = 0 limit_memory_soft = 640000000 limit_memory_hard = 760000000 limit_time_cpu = 600 limit_time_real = 1200`. **Lancer Odoo** : `cd ~/odoo17 && ./odoo-bin -c odoo.conf`. Accédez à Odoo depuis le navigateur : `http://localhost:8069`. **Modules optionnels** : pour nombres en arabe, `pip install num2words`. **Débogage rapide** : si `ModuleNotFoundError: No module named 'xxx'` → installer le module avec pip dans le venv. Si problème `pkg_resources` → assurez-vous que `setuptools<70` est installé. Toujours activer le venv avant de lancer Odoo avec `source venv/bin/activate`. **Notes** : pour le développement, activer le mode dev `./odoo-bin -c odoo.conf --dev=all`, logs dans `odoo.log`, ports par défaut : HTTP 8069, Longpoll 8072, base de données PostgreSQL. **Liens utiles** : [Documentation officielle Odoo 17](https://www.odoo.com/documentation/17.0/), [Forum Odoo](https://www.odoo.com/forum/help-1).
+# Odoo 17 Local Installation
+
+Ce dépôt contient une version locale d’Odoo 17 prête à installer et à configurer sur Ubuntu 22.04/24.04.
+
+---
+
+## 1️⃣ Prérequis système
+
+Installez les paquets essentiels :
+
+```bash
+sudo apt update
+sudo apt install -y git python3 python3-pip python3-venv python3-setuptools postgresql postgresql-contrib build-essential libxml2-dev libxslt1-dev libjpeg-dev zlib1g-dev libpq-dev libldap2-dev libsasl2-dev libffi-dev wkhtmltopdf nodejs npm
+
+git clone https://github.com/omarnebi/odoo17.git
+cd odoo17
+python3 -m venv venv --upgrade-deps
+source venv/bin/activate
+
+which python
+# /home/username/odoo17/venv/bin/python
+pip install --upgrade pip
+pip uninstall -y setuptools
+pip install "setuptools<70" wheel
+
+pip install -r requirements.txt
+sudo -u postgres createuser -s odooevent
+sudo -u postgres psql
+\password odooevent
+puis \q pour quitter postgres
+créer avec nano odoo.conf
+puis ajouter ces lignes dans odoo.conf
+----
+[options]
+admin_passwd = admin
+db_host = False
+db_port = False
+db_user = odooevent
+db_password = odoo17
+addons_path = addons,custom_addons
+xmlrpc_interface = 0.0.0.0
+xmlrpc_port = 8069
+longpolling_port = 8072
+logfile = odoo.log
+log_level = info
+workers = 0
+limit_memory_soft = 640000000
+limit_memory_hard = 760000000
+limit_time_cpu = 600
+limit_time_real = 1200
+---
+cd ~/odoo17
+./odoo-bin -c odoo.conf
+
+
+
+
+
+
+
